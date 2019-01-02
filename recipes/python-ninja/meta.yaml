@@ -1,0 +1,45 @@
+{% set name = "python-ninja" %}
+#{% set version = "1.8.2.post2" %}
+{% set version = "1.8.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  - url: https://pypi.io/packages/source/n/ninja/ninja-{{ version }}.tar.gz
+    #sha256: 746e030e0be951dc6ff95a5dce1b7210449033a6f84c1376954d292639fc4e8f
+    patches:
+      #- 0001-setup.py-Fix-install-using-pip-10-removing-using-of-.patch
+      # this includes the patch above
+      - 0000-simplify-build-process.patch
+  - url: https://raw.githubusercontent.com/ninja-build/ninja/v{{ version }}/misc/ninja_syntax.py
+    folder: ninja
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+
+requirements:
+  host:
+    - python 3.6
+    - pip
+  run:
+    - python 3.6
+    - ninja =={{ version }}
+
+test:
+  imports:
+    - ninja
+
+about:
+  home: https://github.com/scikit-build/ninja-python-distributions
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE_Apache_20
+  summary: 'Simple, fast, extensible JSON encoder/decoder for Python'
+  summary: 'Ninja is a small build system with a focus on speed and provides ninja_syntax.py for generating .ninja files.'
+
+extra:
+  recipe-maintainers:
+    - hmaarrfk

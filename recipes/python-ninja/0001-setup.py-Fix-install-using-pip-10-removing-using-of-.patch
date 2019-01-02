@@ -1,0 +1,44 @@
+From 8cf024af632b61f291ee4787bf754f291b7f4673 Mon Sep 17 00:00:00 2001
+From: Jean-Christophe Fillion-Robin <jchris.fillionr@kitware.com>
+Date: Mon, 9 Jul 2018 18:01:54 -0400
+Subject: [PATCH] setup.py: Fix install using pip >= 10 removing using of
+ parse_requirements
+
+See https://github.com/ninja-build/ninja/issues/1431
+---
+ setup.py | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 8ae4374..eb022a3 100755
+--- a/setup.py
++++ b/setup.py
+@@ -3,7 +3,7 @@
+ import sys
+ import versioneer
+ 
+-from pip.req import parse_requirements
++from distutils.text_file import TextFile
+ from skbuild import setup
+ 
+ 
+@@ -14,12 +14,13 @@ with open('HISTORY.rst', 'r') as fp:
+     history = fp.read().replace('.. :changelog:', '')
+ 
+ 
+-def _parse_requirements(filename):
+-    return [str(ir.req) for ir in parse_requirements(filename, session=False)]
++def parse_requirements(filename):
++    with open(filename, 'r') as file:
++        return TextFile(filename, file).readlines()
+ 
+ 
+ requirements = []
+-dev_requirements = _parse_requirements('requirements-dev.txt')
++dev_requirements = parse_requirements('requirements-dev.txt')
+ 
+ # Require pytest-runner only when running tests
+ pytest_runner = (['pytest-runner>=2.0,<3dev']
+-- 
+2.17.1
+
