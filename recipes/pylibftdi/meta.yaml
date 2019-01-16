@@ -1,0 +1,38 @@
+{% set name = "pylibftdi" %}
+{% set version = "0.17.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: dc615a5338c866cc1a316cabef2ea5862b75c81de9410b85a85f38a033214c8c
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  noarch: python
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - libftdi
+
+test:
+  imports:
+    - pylibftdi
+
+about:
+  home: https://bitbucket.org/codedstructure/pylibftdi/
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
+  summary: 'pylibftdi is a minimal Pythonic interface to FTDI devices using libftdi.'
+
+extra:
+  recipe-maintainers:
+    - hmaarrfk
