@@ -1,0 +1,44 @@
+package:
+  name: libusb1-devel-cos6-x86_64
+  version: 1.0.9
+
+source:
+  - url: http://mirror.centos.org/centos/6.10/os/x86_64/Packages/libusb1-devel-{{ version }}-0.7.rc1.el6.x86_64.rpm
+    sha256: 57fc282ca078914246ab1570d15331173e649e8b9eeefd6dbfdc93b2a03701d8
+    folder: binary
+  - url: http://vault.centos.org/6.10/os/Source/SPackages/libusb1-{{ version }}-0.7.rc1.el6.src.rpm
+    folder: source
+    sha256: f1660376ff7fd27ec72d51dc24a40c46716adc3b5be09e59efde9dea4100da1f
+
+build:
+  number: 0
+  noarch: generic
+
+requirements:
+  build:
+    - libusb1-cos6-x86_64 =={{ version }}
+  run:
+    - libusb1-cos6-x86_64 =={{ version }}
+
+about:
+  home: https://libusb.info/
+  license: LGPL-2.1
+  license_family: LGPL
+  summary: "(CDT) Development tools for programs to obtain generic access to USB devices"
+  description: |
+    libusb is a C library that provides generic access to USB devices. It is intended to be
+    used by developers to facilitate the production of applications that communicate with
+    USB hardware.
+
+    It is portable: Using a single cross-platform API, it provides access to USB devices
+    on Linux, OS X, Windows, Android, OpenBSD, etc.
+
+    It is user-mode: No special privilege or elevation is required for the application to
+    communicate with a device.
+
+    It is version-agnostic: All versions of the USB protocol, from 1.0 to 3.1 (latest), are
+    supported.
+
+extra:
+  recipe-maintainers:
+    - hmaarrfk
