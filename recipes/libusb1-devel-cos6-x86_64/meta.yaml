@@ -1,6 +1,8 @@
+{% set version = "1.0.9" %}
+
 package:
   name: libusb1-devel-cos6-x86_64
-  version: 1.0.9
+  version: {{ version }}
 
 source:
   - url: http://mirror.centos.org/centos/6.10/os/x86_64/Packages/libusb1-devel-{{ version }}-0.7.rc1.el6.x86_64.rpm
