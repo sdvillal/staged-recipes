@@ -24,7 +24,7 @@ requirements:
     - protobuf >=3.6
 
 test:
-  imports:
+  commands:
     - which protoc-gen-mypy       # [unix]
     - where protoc-gen-mypy.bat   # [win]
 
