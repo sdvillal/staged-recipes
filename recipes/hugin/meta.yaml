@@ -43,7 +43,6 @@ requirements:
     - wxwidgets
   run:
     - exiftools
-    # need to build this too
     - enblend
 
 test:
