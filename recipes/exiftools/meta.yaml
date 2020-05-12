@@ -1,7 +1,7 @@
 {% set version = "11.96" %}
 
 package:
-  name: exiftools
+  name: exiftool
   version: {{ version }}
 
 source:
@@ -13,7 +13,8 @@ source:
 build:
   number: 0
   script:
-    - perl Makefile.PL --prefix={{ PREFIX }}
+    - perl Makefile.PL PREFIX={{ PREFIX }} LIB={{ LIBRARY_LIB }} # [win]
+    - perl Makefile.PL --prefix={{ PREFIX }}  # [not win]
     - make
     - make install
 
@@ -21,7 +22,6 @@ requirements:
   build:
     - make
   host:
-    # hmaarrfk: 2020/05/10 To build locally, I had to specify 5.26.2 ???
     - perl
   run:
     - perl
