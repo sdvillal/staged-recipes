@@ -1,15 +1,14 @@
-diff -r ef8470f9d682 .hgtags
---- a/.hgtags	Sun Feb 12 15:25:10 2017 +0100
-+++ b/.hgtags	Mon Apr 27 19:55:56 2020 -0700
-@@ -19,4 +19,4 @@
+diff -r a7a247e1e64b .hgtags
+--- a/.hgtags	Tue Mar 29 10:13:05 2016 +0200
++++ b/.hgtags	Mon May 11 19:24:08 2020 -0700
+@@ -19,3 +19,4 @@
  f1e30de071451f190d1f8064764ce873c43c8bfc Release-1_3-20040523
  d394f60f8edfe4b0373a4f0146b2e71fb59ceb2c Release-4_0-20091213
  e2e8180028fd1761eca6e6af598e0137384f4e6d Release-4_1-20121208
--a7a247e1e64bf920050f49c5c95a641825c6e2e8 Release-4_2-20160329
 +f8a34cfab8c143dac7b785806085aa929037512b Release-4_1_5-20160322
-diff -r ef8470f9d682 CMakeLists.txt
---- a/CMakeLists.txt	Sun Feb 12 15:25:10 2017 +0100
-+++ b/CMakeLists.txt	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b CMakeLists.txt
+--- a/CMakeLists.txt	Tue Mar 29 10:13:05 2016 +0200
++++ b/CMakeLists.txt	Mon May 11 19:24:08 2020 -0700
 @@ -6,7 +6,7 @@
  #                  , Harry van der Wolf <hvdwolf@gmail.com>
  # Original file from lyx-project, heavily modified
@@ -176,8 +175,8 @@ diff -r ef8470f9d682 CMakeLists.txt
  MESSAGE(STATUS "")
  MESSAGE(STATUS "Image Formats Enabled:")
  MESSAGE(STATUS "OpenEXR:                 ${OPENEXR_FOUND}")
-diff -r ef8470f9d682 CMakeModules/FindCXX11Compiler.cmake
---- a/CMakeModules/FindCXX11Compiler.cmake	Sun Feb 12 15:25:10 2017 +0100
+diff -r a7a247e1e64b CMakeModules/FindCXX11Compiler.cmake
+--- a/CMakeModules/FindCXX11Compiler.cmake	Tue Mar 29 10:13:05 2016 +0200
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,89 +0,0 @@
 -# Check if compiler supports C++11 features 
@@ -269,9 +268,9 @@ diff -r ef8470f9d682 CMakeModules/FindCXX11Compiler.cmake
 -FIND_PACKAGE_HANDLE_STANDARD_ARGS(CXX11Compiler DEFAULT_MSG CXX11_FLAG)
 -
 -MARK_AS_ADVANCED(CXX11_FLAG)
-diff -r ef8470f9d682 CMakeModules/FindEXIV2.cmake
+diff -r a7a247e1e64b CMakeModules/FindEXIV2.cmake
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/CMakeModules/FindEXIV2.cmake	Mon Apr 27 19:55:56 2020 -0700
++++ b/CMakeModules/FindEXIV2.cmake	Mon May 11 19:24:08 2020 -0700
 @@ -0,0 +1,150 @@
 +# - Try to find the Exiv2 library
 +# Once done this will define
@@ -423,9 +422,9 @@ diff -r ef8470f9d682 CMakeModules/FindEXIV2.cmake
 +  MARK_AS_ADVANCED(EXIV2_INCLUDE_DIR EXIV2_LIBRARIES)
 +
 +endif (EXIV2_INCLUDE_DIR AND EXIV2_LIBRARIES)
-diff -r ef8470f9d682 CMakeModules/FindJPEG.cmake
---- a/CMakeModules/FindJPEG.cmake	Sun Feb 12 15:25:10 2017 +0100
-+++ b/CMakeModules/FindJPEG.cmake	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b CMakeModules/FindJPEG.cmake
+--- a/CMakeModules/FindJPEG.cmake	Tue Mar 29 10:13:05 2016 +0200
++++ b/CMakeModules/FindJPEG.cmake	Mon May 11 19:24:08 2020 -0700
 @@ -24,9 +24,9 @@
    ${SOURCE_BASE_DIR}/jpeg-7
  )
@@ -438,9 +437,9 @@ diff -r ef8470f9d682 CMakeModules/FindJPEG.cmake
    WIN32_DEBUG_POSTFIX d
    NAMES jpeg libjpeg
    PATHS 
-diff -r ef8470f9d682 CMakeModules/FindLCMS2.cmake
---- a/CMakeModules/FindLCMS2.cmake	Sun Feb 12 15:25:10 2017 +0100
-+++ b/CMakeModules/FindLCMS2.cmake	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b CMakeModules/FindLCMS2.cmake
+--- a/CMakeModules/FindLCMS2.cmake	Tue Mar 29 10:13:05 2016 +0200
++++ b/CMakeModules/FindLCMS2.cmake	Mon May 11 19:24:08 2020 -0700
 @@ -26,7 +26,7 @@
      include(FindLibraryWithDebug)
      find_library_with_debug(LCMS2_LIBRARIES
@@ -450,9 +449,9 @@ diff -r ef8470f9d682 CMakeModules/FindLCMS2.cmake
        PATHS ${LCMS2_ROOT_DIR}/Lib/MS
      )
      
-diff -r ef8470f9d682 CMakeModules/FindLibraryWithDebug.cmake
---- a/CMakeModules/FindLibraryWithDebug.cmake	Sun Feb 12 15:25:10 2017 +0100
-+++ b/CMakeModules/FindLibraryWithDebug.cmake	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b CMakeModules/FindLibraryWithDebug.cmake
+--- a/CMakeModules/FindLibraryWithDebug.cmake	Tue Mar 29 10:13:05 2016 +0200
++++ b/CMakeModules/FindLibraryWithDebug.cmake	Mon May 11 19:24:08 2020 -0700
 @@ -9,81 +9,147 @@
  # Redistribution and use is allowed according to the terms of the BSD license.
  # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -658,9 +657,9 @@ diff -r ef8470f9d682 CMakeModules/FindLibraryWithDebug.cmake
 +  ENDIF()
 +
  ENDMACRO(FIND_LIBRARY_WITH_DEBUG)
-diff -r ef8470f9d682 CMakeModules/FindOpenEXR.cmake
---- a/CMakeModules/FindOpenEXR.cmake	Sun Feb 12 15:25:10 2017 +0100
-+++ b/CMakeModules/FindOpenEXR.cmake	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b CMakeModules/FindOpenEXR.cmake
+--- a/CMakeModules/FindOpenEXR.cmake	Tue Mar 29 10:13:05 2016 +0200
++++ b/CMakeModules/FindOpenEXR.cmake	Mon May 11 19:24:08 2020 -0700
 @@ -24,18 +24,18 @@
    PKGCONFIG(OpenEXR _OpenEXRIncDir _OpenEXRLinkDir _OpenEXRLinkFlags _OpenEXRCflags)
  ENDIF (NOT WIN32 OR MINGW)
@@ -750,9 +749,9 @@ diff -r ef8470f9d682 CMakeModules/FindOpenEXR.cmake
    
    
    
-diff -r ef8470f9d682 ConfigureChecks.cmake
---- a/ConfigureChecks.cmake	Sun Feb 12 15:25:10 2017 +0100
-+++ b/ConfigureChecks.cmake	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b ConfigureChecks.cmake
+--- a/ConfigureChecks.cmake	Tue Mar 29 10:13:05 2016 +0200
++++ b/ConfigureChecks.cmake	Mon May 11 19:24:08 2020 -0700
 @@ -186,52 +186,3 @@
    int main(){char b;char *a = strerror_r(0, &b, 0); return(0);}
    "
@@ -806,11 +805,11 @@ diff -r ef8470f9d682 ConfigureChecks.cmake
 -    "
 -    HAVE_BOOST_FALLTHROUGH
 -)
-diff -r ef8470f9d682 NEWS
---- a/NEWS	Sun Feb 12 15:25:10 2017 +0100
-+++ b/NEWS	Mon Apr 27 19:55:56 2020 -0700
-@@ -1,19 +1,57 @@
--* Version 4.2.1
+diff -r a7a247e1e64b NEWS
+--- a/NEWS	Tue Mar 29 10:13:05 2016 +0200
++++ b/NEWS	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,57 @@
+-* Version 4.2
 +* Version 4.3
 +
 +Unreleased.  Current line of development.
@@ -822,8 +821,7 @@ diff -r ef8470f9d682 NEWS
 +
 +- Enblend and Enfuse transfer EXIF, IPTC, and XMP meta-data from the
 +  input images to the output images.
- 
--Currently unreleased.
++
 +- Both Enblend and Enfuse can now send their output to files without a
 +  filename extension, which included devices, like e.g. "/dev/stdout".
 +  The output format is PNM (Portable aNyMap).  The same holds for the
@@ -835,16 +833,15 @@ diff -r ef8470f9d682 NEWS
 +
 +
 +** New Commandline Options
-+
+ 
+-Released March 29, 2016.
 +- To circumnavigate the lack of alpha-channel support of some common
 +  image formats, add option `--output-mask', to let the user define a
 +  mask filename for the output.
 +
- 
- ** Developer Stuff
- 
--- Autoconf: configuration switches `--enable-image-cache' and its
--  opposite were removed.
++
++** Developer Stuff
++
 +- Configuration switches `--enable-image-cache' and its opposite were
 +  downgraded to nops.
 +
@@ -853,9 +850,7 @@ diff -r ef8470f9d682 NEWS
 +  (default) or some performance critical libraries are linked in with
 +  the static versions.
 +
- 
--- CMake: Fix setting environment variable `TEXINPUTS' for LaTeX
--  documentation generation.
++
 +** Package Maintainer Stuff
 +
 +- All Boost dependencies have been scrapped.
@@ -865,16 +860,15 @@ diff -r ef8470f9d682 NEWS
 +          https://reproducible-builds.org/specs/source-date-epoch/
 +  for details.
 +
- 
- 
- * Version 4.2  "Compressor Road"
- 
--Released March 29, 2016.
++
++
++* Version 4.2  "Compressor Road"
++
 +Released on March 29, 2016.
  
  ** Improvements
  
-@@ -58,6 +96,14 @@
+@@ -45,6 +96,14 @@
    is now up to the user.  The default still is the Gauss function as
    in all Enfuse versions before.
  
@@ -889,7 +883,7 @@ diff -r ef8470f9d682 NEWS
  
  ** New Commandline Options
  
-@@ -98,20 +144,19 @@
+@@ -85,20 +144,19 @@
    Options `--exposure-mu' and `--exposure-sigma' are scheduled for
    withdrawal in a later version of Enfuse.
  
@@ -918,7 +912,7 @@ diff -r ef8470f9d682 NEWS
  ** Developer Stuff
  
  - During configuration the name of Vigra's import-export library can
-@@ -328,7 +373,7 @@
+@@ -315,7 +373,7 @@
    ("--disable-image-cache").  Speedups of up to 30% have been reported
    on the amd64 architecture.
  
@@ -927,7 +921,7 @@ diff -r ef8470f9d682 NEWS
    image files.  Response files contain lists of image filenames or
    names of other response files.
  
-@@ -399,7 +444,7 @@
+@@ -386,7 +444,7 @@
  - All Enfuse options have been converted to Enblend's option naming
    scheme.  This is, camel-casing has been replaced by lowercase plus
    dashes.  The new option name are more systematically constructed,
@@ -936,20 +930,12 @@ diff -r ef8470f9d682 NEWS
    4.1.
  
                 Old Option                New Option
-@@ -509,6 +554,7 @@
-   to be.  The culprit is Automake; see PR/486.
- 
- 
-+
- * Version 3.2
- 
- Released on September 8, 2008.
-diff -r ef8470f9d682 README
---- a/README	Sun Feb 12 15:25:10 2017 +0100
-+++ b/README	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b README
+--- a/README	Tue Mar 29 10:13:05 2016 +0200
++++ b/README	Mon May 11 19:24:08 2020 -0700
 @@ -1,5 +1,5 @@
  Copyright (C) 2004-2009 Andrew Mihal.
--Copyright (C) 2009-2017 Christoph Spiel.
+-Copyright (C) 2009-2016 Christoph Spiel.
 +Copyright (C) 2009-2019 Christoph Spiel.
  
  This file is part of Enblend.
@@ -1082,15 +1068,15 @@ diff -r ef8470f9d682 README
  - Little-CMS2  [2.4 in lcm2-2.4]
  
  
-diff -r ef8470f9d682 VERSION
---- a/VERSION	Sun Feb 12 15:25:10 2017 +0100
-+++ b/VERSION	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b VERSION
+--- a/VERSION	Tue Mar 29 10:13:05 2016 +0200
++++ b/VERSION	Mon May 11 19:24:08 2020 -0700
 @@ -1,1 +1,1 @@
--4.2.1-f0304648cc0f
+-4.2
 +4.3-209eafc9748b
-diff -r ef8470f9d682 config.h.cmake
---- a/config.h.cmake	Sun Feb 12 15:25:10 2017 +0100
-+++ b/config.h.cmake	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b config.h.cmake
+--- a/config.h.cmake	Tue Mar 29 10:13:05 2016 +0200
++++ b/config.h.cmake	Mon May 11 19:24:08 2020 -0700
 @@ -31,6 +31,12 @@
  /* define to 1 if you have dlfcn.h header file and dl lib. */
  #cmakedefine HAVE_DL 1
@@ -1143,9 +1129,9 @@ diff -r ef8470f9d682 config.h.cmake
 +
  #endif
 \ No newline at end of file
-diff -r ef8470f9d682 configure.ac
---- a/configure.ac	Sun Feb 12 15:25:10 2017 +0100
-+++ b/configure.ac	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b configure.ac
+--- a/configure.ac	Tue Mar 29 10:13:05 2016 +0200
++++ b/configure.ac	Mon May 11 19:24:08 2020 -0700
 @@ -13,8 +13,7 @@
  AM_SILENT_RULES()
  
@@ -1350,7 +1336,50 @@ diff -r ef8470f9d682 configure.ac
  AC_PATH_PROG(PERL, perl, false)
  if test "$PERL" = false; then
      AC_MSG_ERROR(cannot find perl)
-@@ -485,7 +542,7 @@
+@@ -316,15 +373,9 @@
+ 
+ can_build_doc=yes
+ 
+-AC_PATH_PROGS(LATEX, [latex elatex lambda],
+-              [AC_MSG_WARN(missing LaTeX translator)
+-               can_build_doc=no
+-               missing_for_doc="$missing_for_doc latex"])
+-AC_PATH_PROG(PDFLATEX, pdflatex,
+-             [AC_MSG_WARN([missing PDFLaTeX translator -- no direct translation of LaTeX to PDF available])
+-              missing_for_doc="$missing_for_doc pdflatex"])
++AC_PATH_PROGS(LATEX, [latex elatex lambda])
+ 
+-if test "$latex" != 'no'
++if test -n "$LATEX"
+ then
+   AC_LATEX_CLASS(report,report,[],
+                  [AC_MSG_WARN(missing document class report.cls)
+@@ -351,6 +402,10 @@
+                                [AC_MSG_WARN(missing LaTeX package package_name)
+                                 can_build_doc=no
+                                 missing_for_doc="$missing_for_doc package_name.sty"])])
++else
++  AC_MSG_WARN(missing LaTeX translator)
++  can_build_doc=no
++  missing_for_doc="$missing_for_doc latex"
+ fi
+ 
+ if test "$PERL" != false; then
+@@ -381,6 +436,13 @@
+ fi
+ 
+ 
++AC_PATH_PROG(PDFLATEX, pdflatex)
++if test -z "$PDFLATEX"; then
++     AC_MSG_WARN([missing PDFLaTeX translator -- no direct translation of LaTeX to PDF available])
++     missing_for_doc="$missing_for_doc pdflatex"
++fi
++
++
+ AC_PATH_PROG(TEXLOGANALYSER, texloganalyser, cat)
+ if test "$TEXLOGANALYSER" = cat; then
+     AC_MSG_WARN([cannot find texloganalyser; will substitute cat(1)])
+@@ -480,7 +542,7 @@
  
  
  AC_ARG_VAR(DYNAMIC_TEX_PREAMBLE, [LaTeX commands to add to top of preamble])
@@ -1359,7 +1388,39 @@ diff -r ef8470f9d682 configure.ac
  
  
  AC_MSG_CHECKING(whether to enable debugging)
-@@ -525,6 +582,22 @@
+@@ -500,23 +562,6 @@
+     enable_debug=no
+ fi
+ 
+-AC_MSG_CHECKING(whether to enable image cache)
+-image_cache_default="no"
+-AC_ARG_ENABLE(image_cache,
+-              AS_HELP_STRING([--enable-image-cache],
+-                             [allow for processing of large images @<:@default=no@:>@]),
+-              [enable_image_cache=$enableval],
+-              [enable_image_cache=$image_cache_default])
+-if test "$enable_image_cache" = yes; then
+-    AC_DEFINE(CACHE_IMAGES, 1,
+-              [Define if you want to compile Enblend and Enfuse with image cache])
+-    AC_MSG_RESULT(yes)
+-    enable_image_cache=yes
+-else
+-    AC_MSG_RESULT(no)
+-    enable_image_cache=no
+-fi
+-
+ AC_MSG_CHECKING(whether to compile with OpenMP)
+ openmp_default="no"
+ AC_ARG_ENABLE(openmp,
+@@ -534,14 +579,25 @@
+     AC_MSG_RESULT(no)
+     enable_openmp=no
+ else
+-    if test "$enable_image_cache" = yes; then
+-        AC_MSG_WARN([[image cache and OpenMP support are mutually exclusive]])
+-        AC_MSG_WARN([[only configure like this if you want to develop a reentrant image cache]])
+-        warnings=`echo -e "$warnings\n WARNING: Image cache and OpenMP are both enabled!  You are a developer, aren't you?"`
+-    fi
      enable_openmp=yes
  fi
  
@@ -1382,7 +1443,7 @@ diff -r ef8470f9d682 configure.ac
  AC_CONFIG_FILES([doc/Makefile
                   doc/examples/Makefile
                   doc/examples/enfuse/Makefile
-@@ -546,6 +619,7 @@
+@@ -563,6 +619,7 @@
     CXXFLAGS:                       ${CXXFLAGS:-<none required>}
     LDFLAGS:                        ${LDFLAGS:-<none required>}
     LIBS:                           ${LIBS:-<none required>}
@@ -1390,17 +1451,19 @@ diff -r ef8470f9d682 configure.ac
     EXTRA_LIBS (optional):          ${EXTRA_LIBS:-<none selected>}
  
   can build all documentation:      ${can_build_doc}${no_doc_reason}
-@@ -556,5 +630,7 @@
+@@ -572,7 +629,8 @@
+    enable malloc debugging:        ${enable_dmalloc}
     enable dynamic loading          ${enable_dynload} ${dynload_implementation}
     OpenEXR image format            ${have_exr}
+-   use image cache:                ${enable_image_cache}
     use OpenMP:                     ${enable_openmp}
 +   use OpenCL:                     ${enable_opencl} (search path: $opencl_path)
 +   use Exiv2:                      ${use_exiv2}
     use TCMalloc:                   ${use_tcmalloc}
  ${warnings}])
-diff -r ef8470f9d682 doc/Makefile.am
---- a/doc/Makefile.am	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/Makefile.am	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/Makefile.am
+--- a/doc/Makefile.am	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/Makefile.am	Mon May 11 19:24:08 2020 -0700
 @@ -15,6 +15,8 @@
  ##    t    displays all *.tex files used
  TEXLOGANALYSER_FLAGS = $(if $(subst cat,,$(TEXLOGANALYSER)),-hrt,)
@@ -1431,9 +1494,15 @@ diff -r ef8470f9d682 doc/Makefile.am
            do \
              iter=$$((iter + 1)); \
              if $(AM_V_P); then :; else printf '  LATEX    [pass %d] %s\n' $$iter $@; fi; \
-diff -r ef8470f9d682 doc/common-advanced-options.tex
---- a/doc/common-advanced-options.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-advanced-options.tex	Mon Apr 27 19:55:56 2020 -0700
+@@ -567,4 +570,5 @@
+         uml-dot.m4 \
+         endoc.ist floatstyle-ruledbot.sty  exemplar.hva \
+         cleantex config2tex docstrings updated-on \
++        updateDate.cmake createdvi.cmake.in version.cmake.in CMakeLists.txt \
+     )
+diff -r a7a247e1e64b doc/common-advanced-options.tex
+--- a/doc/common-advanced-options.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-advanced-options.tex	Mon May 11 19:24:08 2020 -0700
 @@ -7,8 +7,8 @@
    \genidx{options!advanced}%
    Advanced Options\commonpart}
@@ -1527,9 +1596,9 @@ diff -r ef8470f9d682 doc/common-advanced-options.tex
  
  
    \label{opt:wrap}%
-diff -r ef8470f9d682 doc/common-bug-reports.tex
---- a/doc/common-bug-reports.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-bug-reports.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-bug-reports.tex
+--- a/doc/common-bug-reports.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-bug-reports.tex	Mon May 11 19:24:08 2020 -0700
 @@ -23,6 +23,9 @@
  In order for a bug report to serve its purpose, you must include the information that makes it
  possible to fix the bug.
@@ -1540,9 +1609,85 @@ diff -r ef8470f9d682 doc/common-bug-reports.tex
  
  \section[Found a Bug?]{\label{sec:have-you-really-found-a-bug}%
    \genidx{bug!reports!identification of bugs}%
-diff -r ef8470f9d682 doc/common-color-spaces.tex
---- a/doc/common-color-spaces.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-color-spaces.tex	Mon Apr 27 19:55:56 2020 -0700
+@@ -63,31 +66,30 @@
+ 
+ To enable someone to investigate the bug, you should include all these things:
+ 
+-\begin{itemize}
+-\item
+-  The exact version and configuration of \App.  You can get the data by running \app{} with the
+-  options \option{--version} and~\option{--verbose} together.  See also
++\begin{description}\renewcommand{\makelabel}[1]{\textbf{#1}}
++\item[Exact Version:] The exact version and configuration of \App.  You can get the data by
++  running \app{} with the options \option{--version} and~\option{--verbose} together.  See also
+   \sectionName~\fullref{sec:finding-out-details} on how to find out the exact configuration of
+   your binary.
+ 
+-\item
+-  A complete set of input images that will reproduce the bug.  Strive for a minimal set of
+-  \emph{small} images, where images up to 1500\classictimes 1000~pixels qualify as small.
++\item[Complete and Minimal Set of Images:] A complete yet minimal set of input images that will
++  reproduce the bug.  The less images the set contains the faster we can run our tests.  The
++  optimum is a set of just two input images.
+ 
+-\item
+-  The type of machine you are using, and the operating system name and its version number.
++\item[Small Images:] Strive for small images, where images up to 1500\classictimes 1000~pixels
++  qualify as small.
+ 
+-\item
+-  A complete list of any modifications you have made to the source.  Be precise about these
+-  changes.  Show a delta generated with \command{diff} for them.
++\item[Environment:] The type of machine you are using, and the operating system name and its
++  version number.
++
++\item[Prior Modifications:] A complete list of any modifications you have made to the source.
++  Be precise about these changes.  Show a \command{diff}-generated delta for them.
+ 
+-\item
+-  Details of any other deviations from the standard procedure for installing \App{} and
+-  \OtherApp{}.
++\item[Odd Workflow:] Details of any other deviations from the standard procedure for installing
++  \App{} and \OtherApp{}.
+ 
+-\item
+-  The \emph{exact command line} you use to call \App{} or \OtherApp{}, which then triggers the
+-  bug.
++\item[Exact Command Line:] The exact command line you use to call \App{} or \OtherApp{}, which
++  then triggers the bug.
+ 
+   Examples:
+ 
+@@ -116,13 +118,13 @@
+   \uref{\huginsourceforgenet}{Hugin} or \uref{\imagefuser}{ImageFuser} by \propername{Harry van
+     der Wolf}, copy\&paste or write down the command line that launches \App{} or \OtherApp{}.
+ 
+-\item
+-  A description of what behavior you observe that you believe is incorrect.  For example, ``The
+-  application gets a fatal signal,'' or, ``The output image contains black holes.''
++\item[Bug Description:] A description of what behavior you observe that you believe is
++  incorrect.  For example, ``The application gets a fatal signal,'' or, ``The output image
++  contains black holes.''
+ 
+   Of course, if the bug is that the application gets a fatal signal, then one cannot miss it.
+   But if the bug is incorrect output, we might not notice unless it is glaringly wrong.
+-\end{itemize}
++\end{description}
+ 
+ 
+ \section[Sending Patches]{\label{sec:sending-patches}%
+@@ -157,7 +159,7 @@
+ 
+ \item
+   Use the version control system to make your diffs.  Prefer the
+-  \uref{\wikipediadiffunifiedformat}{unified diff} format: \code{hg diff --unified 4}.
++  \uref{\wikipediadiffunifiedformat}{unified diff} format: \code{hg diff --git --unified=8}.
+ 
+ \item
+   You can increase the probability that your patch gets applied by basing it on a recent
+diff -r a7a247e1e64b doc/common-color-spaces.tex
+--- a/doc/common-color-spaces.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-color-spaces.tex	Mon May 11 19:24:08 2020 -0700
 @@ -64,7 +64,7 @@
    L = t L_1 + (1 - t) L_2 \quad \mbox{with} \quad 0 \leq t \leq 1,
  \end{equation}
@@ -1593,15 +1738,13 @@ diff -r ef8470f9d682 doc/common-color-spaces.tex
  
  \begin{description}
    \genidx{color cube!\acronym{RGB}}%
-@@ -281,11 +282,11 @@
+@@ -281,9 +282,11 @@
    for grayscale images and inside the \acronym{RGB}-color cube as given in
    \eqnref{equ:trivial-rgb-blend}.
  
 -  This is the fastest color space to do computations within, i.e.\ it consumes by far the least
 -  computing power, because no transform to or from any of the perceptually uniform color spaces
--  is done.  Moreover, this blend-colorspace exhibits no color artifacts even in high contrast
--  scenes, which is good when fusing.  However, it may come up with out-of-whack blended colors,
--  which is bad when blending.
+-  is done.
 +  This is the fastest color space to do computations within, this is it consumes by far the
 +  least computing power, because no transform to or from any of the perceptually uniform color
 +  spaces is done.  Moreover, this blend-colorspace exhibits no color artifacts even in high
@@ -1610,7 +1753,7 @@ diff -r ef8470f9d682 doc/common-color-spaces.tex
  
    \genidx{colorspace!\acronym{L*a*b*}}%
    \gensee{L*a*b*@\acronym{L*a*b*} colorspace}{colorspace, \acronym{L*a*b*}}%
-@@ -297,17 +298,17 @@
+@@ -295,14 +298,17 @@
    all perceivable colors.  It is completely independent of any device characteristics,
    approximates human vision, and is perceptually uniform.
  
@@ -1625,26 +1768,28 @@ diff -r ef8470f9d682 doc/common-color-spaces.tex
 +  \uref{\wikipediastandardilluminant}{Standard illuminant}).
  
    The conversions from and to \acronym{L*a*b*} are moderately fast to compute; \acronym{L*a*b*}
-   mode is two to three times slower than working within the \acronym{RGB}-color cube.  It
-   operates the \acronym{LittleCMS} color-space conversion engine in
-   \uref{\littlecmscomunboundedcmm}{unbounded} mode which rarely causes color artifacts to show
--  up in the shadows in extreme contrast images.
+-  mode is two to three times slower than working within the \acronym{RGB}-color cube.
++  mode is two to three times slower than working within the \acronym{RGB}-color cube.  It
++  operates the \acronym{LittleCMS} color-space conversion engine in
++  \uref{\littlecmscomunboundedcmm}{unbounded} mode which rarely causes color artifacts to show
 +  up in the shadows in extreme contrast images.  Prefer linear gamma encoded images to avoid
 +  this kind of artifacts.
  
    \genidx{colorspace!\acronym{CIEL*u*v*}}%
    \gensee{CIEL*u*v*@\acronym{CIEL*u*v*} colorspace}{colorspace, \acronym{CIEL*u*v*}}%
-@@ -323,7 +324,8 @@
+@@ -316,7 +322,10 @@
+   The applications use the same rendering intent and white-point as with \acronym{L*a*b*}.
+ 
    The conversions from and to \acronym{L*u*v*} are almost as fast to compute as
-   \acronym{L*a*b*}.  It operates the \acronym{LittleCMS} color-space conversion engine in
-   \uref{\littlecmscomunboundedcmm}{unbounded} mode which sometimes causes color artifacts to
--  show up in the shadows in strong contrast images.
+-  \acronym{L*a*b*}.
++  \acronym{L*a*b*}.  It operates the \acronym{LittleCMS} color-space conversion engine in
++  \uref{\littlecmscomunboundedcmm}{unbounded} mode which sometimes causes color artifacts to
 +  show up in the shadows in strong contrast images.  Prefer linear gamma encoded images to avoid
 +  this kind of artifacts.
  
    \genidx{colorspace!\acronym{CIECAM02}}%
    \gensee{CIECAM02@\acronym{CIECAM02} colorspace}{colorspace, \acronym{CIECAM02}}%
-@@ -341,9 +343,9 @@
+@@ -334,9 +343,9 @@
    \end{geeknote}
  
    The transformations to \acronym{CIECAM02} color space and back use perceptual rendering
@@ -1657,27 +1802,57 @@ diff -r ef8470f9d682 doc/common-color-spaces.tex
  
    Both \acronym{CIELUV} and \acronym{CIELAB} only model the color information generated for
    small and isolated color samples.  They cannot model the contextual effects of color
-@@ -355,7 +357,7 @@
+@@ -347,7 +356,9 @@
+   Computationally, \acronym{CIECAM02} is the most expensive blend color space.  If an
    appreciable number of pixels need additional refinement steps the speed of the transformation
    further drops.  Expect \acronym{CIECAM02} mode to be 8--800 times slower than blending within
-   the \acronym{RGB}-color cube.  It operates the \acronym{LittleCMS} color-space conversion
--  engine in \uref{\littlecmscomunboundedcmm}{unbounded} mode, however it tries very hard to
+-  the \acronym{RGB}-color cube.
++  the \acronym{RGB}-color cube.  It operates the \acronym{LittleCMS} color-space conversion
 +  engine in \uref{\littlecmscomunboundedcmm}{unbounded} mode.  However, it tries very hard to
-   recover the visually best-matching color for each pixel thus gone rogue.
++  recover the visually best-matching color for each pixel thus gone rogue.
  \end{description}
  
-@@ -419,7 +421,7 @@
- \fi% enfuse
+ \noindent Surprisingly often blending ``inside the \acronym{RGB}-cube'' works, although
+@@ -399,14 +410,34 @@
+     \item
+       Disable the seam-line optimizer with \flexipageref{\sample{--no-optimize}}{opt:optimize}.
+     \end{itemize}
+-\fi
++\fi% enblend
  
+ \ifenfuse
    \item
--    Prefer linear (i.e.\ $\mathrm{gamma} = 1$) color profiles in the input images, when the
+     \restrictednote{\application{Enfuse} only.} No color space can fix blown highlights when
+     fusing by exposure-weight; use
+     \flexipageref{\sample{--exposure-cutoff}}{opt:exposure-cutoff} for this purpose and check
+-    whether saturation weight is zero.  \fi
++    whether saturation weight is zero.
++\fi% enfuse
++
++  \item
 +    Prefer linear, this is $\mathrm{gamma} = 1$, color profiles in the input images, when the
-     contrast of the scene is high.  To avoid banding it is advisable to use at that least
-     16~bits per color channel with linear color profiles.
++    contrast of the scene is high.  To avoid banding it is advisable to use at that least
++    16~bits per color channel with linear color profiles.
++
++    %% \prgidx{tificc \textrm{(LittleCMS)}}%
++    %% Given the \command{tificc} tool in the \flexipageref{\acronym{LittleCMS}}{app:littlecms}
++    %% project a suitable transformation is as simple as
++    %% \begin{terminal}
++    %%   for x in image-[0-9].tif \\
++    %%   do \\
++    %%   ~~~~tificc \bslash \\
++    %%   ~~~~~~~~-a -b -e -oprophoto-linear.icc -t0 -w16 \bslash \\
++    %%   ~~~~~~~~\$x linear-\$x \\
++    %%   done
++    %% \end{terminal}
++    %% where we have assumed that \filename{prophoto-linear.icc} holds a linear
++    %% \acronym{ProPhotoRGB} \acronym{ICC}-Profile.
+ \end{itemize}
  
-diff -r ef8470f9d682 doc/common-common-options.tex
---- a/doc/common-common-options.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-common-options.tex	Mon Apr 27 19:55:56 2020 -0700
+ \genidx[\rangeendlocation]{colorspace}
+diff -r a7a247e1e64b doc/common-common-options.tex
+--- a/doc/common-common-options.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-common-options.tex	Mon May 11 19:24:08 2020 -0700
 @@ -80,33 +80,32 @@
    \item[Any other format.]\itemend
      Other formats do not accept a \metavar{COMPRESSION} setting.  However, the underlying
@@ -1782,9 +1957,9 @@ diff -r ef8470f9d682 doc/common-common-options.tex
    \tableName~\ref{tab:verbosity-levels} shows the messages available at a particular
    \metavar{LEVEL}.
  
-diff -r ef8470f9d682 doc/common-expert-options.tex
---- a/doc/common-expert-options.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-expert-options.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-expert-options.tex
+--- a/doc/common-expert-options.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-expert-options.tex	Mon May 11 19:24:08 2020 -0700
 @@ -32,7 +32,7 @@
    \genidx{RGB-cube@\acronym{RGB}-cube}%
  \item[--fallback-profile=\metavar{PROFILE-FILENAME}]\itemend
@@ -1875,9 +2050,9 @@ diff -r ef8470f9d682 doc/common-expert-options.tex
  
  
  \ifenblend
-diff -r ef8470f9d682 doc/common-helpful-programs.tex
---- a/doc/common-helpful-programs.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-helpful-programs.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-helpful-programs.tex
+--- a/doc/common-helpful-programs.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-helpful-programs.tex	Mon May 11 19:24:08 2020 -0700
 @@ -175,20 +175,51 @@
  
    The nifty \command{tiffinfo} command in the LibTIFF distribution quickly inquires the most
@@ -1935,9 +2110,9 @@ diff -r ef8470f9d682 doc/common-helpful-programs.tex
  
    \label{app:littlecms}%
    \appidx{LittleCMS}%
-diff -r ef8470f9d682 doc/common-information-options.tex
---- a/doc/common-information-options.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-information-options.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-information-options.tex
+--- a/doc/common-information-options.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-information-options.tex	Mon May 11 19:24:08 2020 -0700
 @@ -28,62 +28,61 @@
    different globbing algorithms.  See \sectionName~\fullref{sec:globbing-algorithms}.
  
@@ -2065,9 +2240,9 @@ diff -r ef8470f9d682 doc/common-information-options.tex
    which machine this was done.
  
    This information can be helpful to ensure the binary was created by a trustworthy builder.
-diff -r ef8470f9d682 doc/common-interaction.tex
---- a/doc/common-interaction.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-interaction.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-interaction.tex
+--- a/doc/common-interaction.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-interaction.tex	Mon May 11 19:24:08 2020 -0700
 @@ -15,9 +15,9 @@
    \genidx{detailed configuration}%
    Finding Out Details About \app}
@@ -2080,9 +2255,11 @@ diff -r ef8470f9d682 doc/common-interaction.tex
  
  \begin{compactitemize}
  \item
-@@ -160,6 +160,34 @@
+@@ -159,8 +159,35 @@
+         \app{} 4.2-95f1fed2bf2d \\
          ~ \\
          Extra feature: dynamic linking support: yes \\
+-        Extra feature: image cache: no \\
          Extra feature: OpenMP: no \\
 +        Extra feature: OpenCL: yes \\
 +        ~~- Platform \#1:~Advanced Micro Devices, Inc., \\
@@ -2115,7 +2292,7 @@ diff -r ef8470f9d682 doc/common-interaction.tex
          ~ \\
          Copyright (C) 2004-2009 Andrew Mihal. \\
          Copyright (C) 2009-2015 Christoph Spiel. \\
-@@ -216,15 +244,14 @@
+@@ -217,15 +244,14 @@
        number of threads''.
      \end{qandaanswer}
  
@@ -2139,7 +2316,7 @@ diff -r ef8470f9d682 doc/common-interaction.tex
  \end{qandalist}
  
  
-@@ -293,11 +320,11 @@
+@@ -294,11 +320,11 @@
  prominent image formats.
  
  %% With the exception of TIFF, VIFF, PNG, and PNM all file types
@@ -2153,7 +2330,7 @@ diff -r ef8470f9d682 doc/common-interaction.tex
  %%
  %% PNM can store 1 and 3 channel images with UInt8, UInt16 and
  %% UInt32 values in each channel.
-@@ -356,7 +383,7 @@
+@@ -357,7 +383,7 @@
              formats themselves, not \App's.  The ``Mask''-column indicates whether the format
              supports an image mask (alpha-channel), see also
              \chapterName~\ref{sec:understanding-masks}.  Column~``Profile'' shows whether the
@@ -2162,7 +2339,7 @@ diff -r ef8470f9d682 doc/common-interaction.tex
              \chapterName~\ref{sec:color-spaces}.}
  \end{table}
  
-@@ -410,6 +437,11 @@
+@@ -411,6 +437,11 @@
      ~~implementing Cilk version 2.0 \\
      ~~~~without support of "\_Cilk\_for" keyword \\
      ~ \\
@@ -2174,7 +2351,7 @@ diff -r ef8470f9d682 doc/common-interaction.tex
      Libraries \\
      ~~GSL:~~~~~~~~1.15 \\
      ~~Little CMS:~2.7.0 \\
-@@ -496,9 +528,9 @@
+@@ -497,9 +528,9 @@
  
    \genidx{message!foreign sources}%
  \item[Foreign Sources:] \appcmd{} depends on various foreign software components that issue
@@ -2187,7 +2364,7 @@ diff -r ef8470f9d682 doc/common-interaction.tex
  
    \begin{literal}
      enfuse: an exception occurred \\
-@@ -557,37 +589,36 @@
+@@ -558,37 +589,36 @@
    \envvar{OMP\_NUM\_THREADS} (see below) does for \acronym{OpenMP}.  It can be helpful for load
    balancing.
  
@@ -2248,7 +2425,7 @@ diff -r ef8470f9d682 doc/common-interaction.tex
    \sectionName~\fullref{sec:compiled-in-features}).
  
    \begin{geeknote}
-@@ -602,7 +633,7 @@
+@@ -603,7 +633,7 @@
  \item[\envvar{OMP\_NUM\_THREADS}\xitemspace (implicit)\xitemspace
    \restrictednote{\acronym{OpenMP}-enabled versions only.}]\itemend
    Control -- which typically means: reduce -- the number of threads under supervision of the
@@ -2257,9 +2434,9 @@ diff -r ef8470f9d682 doc/common-interaction.tex
    \acronym{OpenMP}\hyp{}threads as there are \acronym{CPU}s.  Use this variable for example to
    free some \acronym{CPU}s for other processes than \appcmd.
  
-diff -r ef8470f9d682 doc/common-known-limitations.tex
---- a/doc/common-known-limitations.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-known-limitations.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-known-limitations.tex
+--- a/doc/common-known-limitations.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-known-limitations.tex	Mon May 11 19:24:08 2020 -0700
 @@ -12,11 +12,13 @@
  
  \begin{itemize}
@@ -2287,7 +2464,7 @@ diff -r ef8470f9d682 doc/common-known-limitations.tex
  
      Construct the smallest circumscribed, par-axial rectangle of the overlap area.  The
      rectangle has a circumference
-@@ -42,14 +44,16 @@
+@@ -42,22 +44,95 @@
      \]
      which is of course 1-dimensional.  Internally $U$ again is a number of pixels just as $A$.
  
@@ -2310,15 +2487,33 @@ diff -r ef8470f9d682 doc/common-known-limitations.tex
 +    on them.
    \end{geeknote}
  
-   \optidx{--wrap}%
-@@ -75,9 +79,60 @@
-     option~\flexipageref{\option{--blend-colorspace}}{opt:blend-colorspace}.
- 
-   \item
--    Use linear (i.e.\ $\mathrm{gamma} = 1$) color profiles in the input images.  Also see
+-  \optidx{--wrap}
++  \optidx{--wrap}%
+ \item
+   Option~\sample{--wrap=both} performs blending in $\symmgroup{E}(1) \times \symmgroup{E}(1)$,
+   which is only \emph{locally} isomorphic to $\symmgroup{S}(2)$.  This will cause artifacts
+   that do not appear in $\symmgroup{S}(2)$.  \App{} cannot blend within $\symmgroup{S}(2)$.
+ \fi%enblend
++
++\genidx{artifacts!color}%
++\gensee{color artifacts}{artifacts, color}%
++\optidx{--blend-colorspace}%
++\item
++  High-contrast scenes stored with non-linear color profiles (or no profile at all) tend to
++  produce color artifacts in the deep shadows.  Typically artifacts are isolated, highly
++  saturated pixels.  Because of the different usage styles this problem occurs more often with
++  \application{Enfuse} than with \application{Enblend}.
++
++  Two simple workarounds are known:
++  \begin{enumerate}
++  \item
++    Choose a different blend-colorspace; see
++    option~\flexipageref{\option{--blend-colorspace}}{opt:blend-colorspace}.
++
++  \item
 +    Use linear, this is $\mathrm{gamma} = 1$, color profiles in the input images.  Also see
-     \chapterName~\fullref{sec:color-spaces} on ``Color Spaces And Color Profiles''.
-   \end{enumerate}
++    \chapterName~\fullref{sec:color-spaces} on ``Color Spaces And Color Profiles''.
++  \end{enumerate}
 +
 +\genidx{images!non-overlapping}%
 +\gensee{non-overlapping images}{images, non-overlapping}%
@@ -2373,9 +2568,9 @@ diff -r ef8470f9d682 doc/common-known-limitations.tex
  \end{itemize}
  
  \genidx[\rangeendlocation]{known limitations}
-diff -r ef8470f9d682 doc/common-layer-selection.tex
---- a/doc/common-layer-selection.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-layer-selection.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-layer-selection.tex
+--- a/doc/common-layer-selection.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-layer-selection.tex	Mon May 11 19:24:08 2020 -0700
 @@ -6,10 +6,10 @@
    \genidx[\rangebeginlocation]{layer!selection}%
    Layer Selection\commonpart}
@@ -2459,9 +2654,9 @@ diff -r ef8470f9d682 doc/common-layer-selection.tex
  
  \item
    \App{} and \OtherApp{} by default apply the \sample{\val{val:layer-selector}} selector (see
-diff -r ef8470f9d682 doc/common-mask-template-characters.tex
---- a/doc/common-mask-template-characters.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-mask-template-characters.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-mask-template-characters.tex
+--- a/doc/common-mask-template-characters.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-mask-template-characters.tex	Mon May 11 19:24:08 2020 -0700
 @@ -29,7 +29,7 @@
  
  
@@ -2471,9 +2666,9 @@ diff -r ef8470f9d682 doc/common-mask-template-characters.tex
      character and width specification. \\
  
  
-diff -r ef8470f9d682 doc/common-metadata.tex
+diff -r a7a247e1e64b doc/common-metadata.tex
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/doc/common-metadata.tex	Mon Apr 27 19:55:56 2020 -0700
++++ b/doc/common-metadata.tex	Mon May 11 19:24:08 2020 -0700
 @@ -0,0 +1,102 @@
 +%% This file is part of Enblend.
 +%% Licence details can be found in the file COPYING.
@@ -2577,9 +2772,9 @@ diff -r ef8470f9d682 doc/common-metadata.tex
 +%%% Local Variables:
 +%%% fill-column: 96
 +%%% End:
-diff -r ef8470f9d682 doc/common-notation.tex
---- a/doc/common-notation.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-notation.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-notation.tex
+--- a/doc/common-notation.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-notation.tex	Mon May 11 19:24:08 2020 -0700
 @@ -56,7 +56,7 @@
      Optional part & Optional part of a syntax description in square brackets &
      \option{--verbose}~\optional{=\metavar{LEVEL}} \\
@@ -2613,9 +2808,9 @@ diff -r ef8470f9d682 doc/common-notation.tex
  \fi
  
  
-diff -r ef8470f9d682 doc/common-option-delimiters.tex
---- a/doc/common-option-delimiters.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-option-delimiters.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-option-delimiters.tex
+--- a/doc/common-option-delimiters.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-option-delimiters.tex	Mon May 11 19:24:08 2020 -0700
 @@ -8,8 +8,8 @@
    \gensea{delimiters}{options, delimiters}%
    Option Delimiters\commonpart}
@@ -2627,9 +2822,9 @@ diff -r ef8470f9d682 doc/common-option-delimiters.tex
  colon~\sample{:} in every syntax definition and in all examples.
  
  
-diff -r ef8470f9d682 doc/common-response-files.tex
---- a/doc/common-response-files.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-response-files.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-response-files.tex
+--- a/doc/common-response-files.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-response-files.tex	Mon May 11 19:24:08 2020 -0700
 @@ -153,7 +153,7 @@
  
  \item[Image filenames cannot start with \code{\val{val:response-file-prefix-char}}]\itemend
@@ -2658,9 +2853,9 @@ diff -r ef8470f9d682 doc/common-response-files.tex
  
        \genidx{globbing algorithm!\code{sh}}
      \item[sh]\itemend
-diff -r ef8470f9d682 doc/common-standard-workflow.tex
---- a/doc/common-standard-workflow.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-standard-workflow.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-standard-workflow.tex
+--- a/doc/common-standard-workflow.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-standard-workflow.tex	Mon May 11 19:24:08 2020 -0700
 @@ -29,7 +29,7 @@
  
  \begin{description}
@@ -2679,9 +2874,9 @@ diff -r ef8470f9d682 doc/common-standard-workflow.tex
  
    \genidx{alignment!photometric}%
    \gensee{photometric alignment}{alignment, photometric}%
-diff -r ef8470f9d682 doc/common-understanding-masks.tex
---- a/doc/common-understanding-masks.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-understanding-masks.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-understanding-masks.tex
+--- a/doc/common-understanding-masks.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-understanding-masks.tex	Mon May 11 19:24:08 2020 -0700
 @@ -15,8 +15,7 @@
  contributes, zero again meaning ``no contribution''.
  
@@ -2704,9 +2899,9 @@ diff -r ef8470f9d682 doc/common-understanding-masks.tex
  
  \prgidx{nona \textrm{(Hugin)}}%
  Stitchers like \command{nona} add a mask to their output images.
-diff -r ef8470f9d682 doc/common-workflow.tex
---- a/doc/common-workflow.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/common-workflow.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/common-workflow.tex
+--- a/doc/common-workflow.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/common-workflow.tex	Mon May 11 19:24:08 2020 -0700
 @@ -22,6 +22,7 @@
  \input{common-standard-workflow}
  \input{common-external-masks}
@@ -2715,9 +2910,20 @@ diff -r ef8470f9d682 doc/common-workflow.tex
  
  \genidx[\rangeendlocation]{photographic workflow}
  
-diff -r ef8470f9d682 doc/enblend-expert-mask-generation-options.tex
---- a/doc/enblend-expert-mask-generation-options.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enblend-expert-mask-generation-options.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/createdvi.cmake.in
+--- a/doc/createdvi.cmake.in	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/createdvi.cmake.in	Mon May 11 19:24:08 2020 -0700
+@@ -11,7 +11,6 @@
+ set(ENV{TEXINPUTS} ".:@HEVEA_LIB_DIR@:${INPUT_DIR}//:")
+ endif()
+ # first latex run
+-set($ENV{TEXINPUTS} ${INPUT_DIR})
+ message(STATUS "Executing ${compiler} ${flags} ${INPUT_DIR}/${filename}.tex")
+ execute_process(
+     COMMAND ${compiler} ${flags} ${INPUT_DIR}/${filename}.tex
+diff -r a7a247e1e64b doc/enblend-expert-mask-generation-options.tex
+--- a/doc/enblend-expert-mask-generation-options.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enblend-expert-mask-generation-options.tex	Mon May 11 19:24:08 2020 -0700
 @@ -7,7 +7,7 @@
    \genidx{options!mask generation for experts}%
    Expert Mask Generation Options}
@@ -2745,9 +2951,9 @@ diff -r ef8470f9d682 doc/enblend-expert-mask-generation-options.tex
    their absolute values are not important as \App{} normalizes their sum.
  
  
-diff -r ef8470f9d682 doc/enblend-flow-charts.tex
---- a/doc/enblend-flow-charts.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enblend-flow-charts.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enblend-flow-charts.tex
+--- a/doc/enblend-flow-charts.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enblend-flow-charts.tex	Mon May 11 19:24:08 2020 -0700
 @@ -2,7 +2,7 @@
  %% Licence details can be found in the file COPYING.
  
@@ -2757,9 +2963,9 @@ diff -r ef8470f9d682 doc/enblend-flow-charts.tex
    \genidx[\rangebeginlocation]{program flow}%
    \genidx{options!program flow}%
    \gensee{flow}{program flow}%
-diff -r ef8470f9d682 doc/enblend-image-requirements.tex
---- a/doc/enblend-image-requirements.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enblend-image-requirements.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enblend-image-requirements.tex
+--- a/doc/enblend-image-requirements.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enblend-image-requirements.tex	Mon May 11 19:24:08 2020 -0700
 @@ -32,7 +32,7 @@
    \acronym{RGB}-color images (three channels and alpha channel).
  
@@ -2787,9 +2993,9 @@ diff -r ef8470f9d682 doc/enblend-image-requirements.tex
    for all pictures.
  \end{itemize}
  
-diff -r ef8470f9d682 doc/enblend-mask-generation-options.tex
---- a/doc/enblend-mask-generation-options.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enblend-mask-generation-options.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enblend-mask-generation-options.tex
+--- a/doc/enblend-mask-generation-options.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enblend-mask-generation-options.tex	Mon May 11 19:24:08 2020 -0700
 @@ -124,10 +124,10 @@
    \gensee{save mask}{mask, save}%
  \item[--save-masks\optional{=\metavar{IMAGE-TEMPLATE}}]\itemend
@@ -2804,9 +3010,9 @@ diff -r ef8470f9d682 doc/enblend-mask-generation-options.tex
    images of the right sizes that you can edit to make your changes.  Later, use
    option~\flexipageref{\option{--load-masks}}{opt:load-masks} to blend the project with your
    custom seam lines.
-diff -r ef8470f9d682 doc/enblend-overview.tex
---- a/doc/enblend-overview.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enblend-overview.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enblend-overview.tex
+--- a/doc/enblend-overview.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enblend-overview.tex	Mon May 11 19:24:08 2020 -0700
 @@ -34,11 +34,13 @@
  that certain portions of an input image should not contribute to the final image.
  
@@ -2822,9 +3028,9 @@ diff -r ef8470f9d682 doc/enblend-overview.tex
  images.  This treatment is detrimental to \App{}.  Turn off feathering by deselecting it or
  setting the ``feather width'' to zero.
  
-diff -r ef8470f9d682 doc/enblend-seam-generators.tex
---- a/doc/enblend-seam-generators.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enblend-seam-generators.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enblend-seam-generators.tex
+--- a/doc/enblend-seam-generators.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enblend-seam-generators.tex	Mon May 11 19:24:08 2020 -0700
 @@ -45,10 +45,10 @@
  \genidx{seam generation!details}%
  The most significant difference between the two algorithms is the output mask gradation.
@@ -2840,9 +3046,21 @@ diff -r ef8470f9d682 doc/enblend-seam-generators.tex
  
  \genidx{graphcut!details}%
  Graph-Cut, on the other hand, is capable of producing the final mask in one pass without the
-diff -r ef8470f9d682 doc/enblend.tex
---- a/doc/enblend.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enblend.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enblend-title.tex
+--- a/doc/enblend-title.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enblend-title.tex	Mon May 11 19:24:08 2020 -0700
+@@ -31,7 +31,7 @@
+ 
+ \begin{flushleft}
+   Copyright \copyright{} 2004--2009 \propername{Andrew Mihal}. \\
+-  Copyright \copyright{} 2009--2016 \propername{Christoph Spiel}.
++  Copyright \copyright{} 2009--2017 \propername{Christoph Spiel}.
+ \end{flushleft}
+ 
+ \begin{quotation}
+diff -r a7a247e1e64b doc/enblend.tex
+--- a/doc/enblend.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enblend.tex	Mon May 11 19:24:08 2020 -0700
 @@ -29,11 +29,13 @@
  \newcommand*{\app}{enblend}
  \newcommand*{\appcmd}{\command{enblend}}
@@ -2857,9 +3075,9 @@ diff -r ef8470f9d682 doc/enblend.tex
  
  
  \finishdynamicpreamble
-diff -r ef8470f9d682 doc/enfuse-applications.tex
---- a/doc/enfuse-applications.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse-applications.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse-applications.tex
+--- a/doc/enfuse-applications.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-applications.tex	Mon May 11 19:24:08 2020 -0700
 @@ -104,20 +104,15 @@
  \mainpurpose{Reduce noise}
  
@@ -2962,9 +3180,9 @@ diff -r ef8470f9d682 doc/enfuse-applications.tex
  
  To suppress unreal edges or counter excessive noise, use the \option{--contrast\hyp min\hyp
    curvature}~option with a \emph{negative} curvature measure~\metavar{CURVATURE}.  This forces
-diff -r ef8470f9d682 doc/enfuse-expert-fusion-options.tex
---- a/doc/enfuse-expert-fusion-options.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse-expert-fusion-options.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse-expert-fusion-options.tex
+--- a/doc/enfuse-expert-fusion-options.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-expert-fusion-options.tex	Mon May 11 19:24:08 2020 -0700
 @@ -25,7 +25,7 @@
    \gensee{LoG@\acronym{LoG}}{\propername{Laplacian}-of-\propername{Gaussian}}%
  \item[\itempar{--contrast-edge-scale=\metavar{EDGE-SCALE}\optional{:\feasiblebreak
@@ -3019,9 +3237,9 @@ diff -r ef8470f9d682 doc/enfuse-expert-fusion-options.tex
        \begin{equation}\label{equ:weight:fullsine}
        w_{\mathrm{exp}} =
        \left\{\begin{array}{cl}
-diff -r ef8470f9d682 doc/enfuse-exposure-weighting-user-dynamic.tex
---- a/doc/enfuse-exposure-weighting-user-dynamic.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse-exposure-weighting-user-dynamic.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse-exposure-weighting-user-dynamic.tex
+--- a/doc/enfuse-exposure-weighting-user-dynamic.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-exposure-weighting-user-dynamic.tex	Mon May 11 19:24:08 2020 -0700
 @@ -6,10 +6,8 @@
    \genidx{weighting!exposure!user-defined!dynamically-linked}%
    User-Defined, Dynamically-Linked Exposure Weighting Functions}
@@ -3126,9 +3344,9 @@ diff -r ef8470f9d682 doc/enfuse-exposure-weighting-user-dynamic.tex
  
  
  \subsubsection[Compiling, Linking, and Loading]{\label{sec:compiling-linking-loading}%
-diff -r ef8470f9d682 doc/enfuse-exposure-weighting-user-opencl.tex
---- a/doc/enfuse-exposure-weighting-user-opencl.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse-exposure-weighting-user-opencl.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse-exposure-weighting-user-opencl.tex
+--- a/doc/enfuse-exposure-weighting-user-opencl.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-exposure-weighting-user-opencl.tex	Mon May 11 19:24:08 2020 -0700
 @@ -50,7 +50,7 @@
  \end{literal}
  
@@ -3149,9 +3367,9 @@ diff -r ef8470f9d682 doc/enfuse-exposure-weighting-user-opencl.tex
  
      The actual value, $2 \sqrt{2 \log(2)}$, is approximately 2.35482.
  
-diff -r ef8470f9d682 doc/enfuse-exposure-weighting.tex
---- a/doc/enfuse-exposure-weighting.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse-exposure-weighting.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse-exposure-weighting.tex
+--- a/doc/enfuse-exposure-weighting.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-exposure-weighting.tex	Mon May 11 19:24:08 2020 -0700
 @@ -111,7 +111,7 @@
      & \code{halfsine}, \code{half-sine} &
      \fullref*{equ:weight:halfsine} &
@@ -3178,9 +3396,9 @@ diff -r ef8470f9d682 doc/enfuse-exposure-weighting.tex
  
  
  %%% Local Variables:
-diff -r ef8470f9d682 doc/enfuse-image-requirements.tex
---- a/doc/enfuse-image-requirements.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse-image-requirements.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse-image-requirements.tex
+--- a/doc/enfuse-image-requirements.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-image-requirements.tex	Mon May 11 19:24:08 2020 -0700
 @@ -14,7 +14,7 @@
    The images overlap.
  
@@ -3208,9 +3426,9 @@ diff -r ef8470f9d682 doc/enfuse-image-requirements.tex
    for all pictures.
  \end{itemize}
  
-diff -r ef8470f9d682 doc/enfuse-local-contrast-weighting.tex
---- a/doc/enfuse-local-contrast-weighting.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse-local-contrast-weighting.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse-local-contrast-weighting.tex
+--- a/doc/enfuse-local-contrast-weighting.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-local-contrast-weighting.tex	Mon May 11 19:24:08 2020 -0700
 @@ -143,7 +143,7 @@
    \propername{Laplacian}-of-\propername{Gaussian} operator,
    \uref{\hciiwrvigracommonfilters}{\code{vigra::laplacianOfGaussian}} is part of the
@@ -3237,9 +3455,21 @@ diff -r ef8470f9d682 doc/enfuse-local-contrast-weighting.tex
  
  \begin{optionsummary}
  \item[--contrast-edge-scale] \sectionName~\fullref{opt:contrast-edge-scale}
-diff -r ef8470f9d682 doc/enfuse-weighting-functions.tex
---- a/doc/enfuse-weighting-functions.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse-weighting-functions.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse-title.tex
+--- a/doc/enfuse-title.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-title.tex	Mon May 11 19:24:08 2020 -0700
+@@ -31,7 +31,7 @@
+ 
+ \begin{flushleft}
+   Copyright \copyright{} 2004--2009 \propername{Andrew Mihal}. \\
+-  Copyright \copyright{} 2009--2016 \propername{Christoph Spiel}.
++  Copyright \copyright{} 2009--2017 \propername{Christoph Spiel}.
+ \end{flushleft}
+ 
+ \begin{quotation}
+diff -r a7a247e1e64b doc/enfuse-weighting-functions.tex
+--- a/doc/enfuse-weighting-functions.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse-weighting-functions.tex	Mon May 11 19:24:08 2020 -0700
 @@ -34,7 +34,7 @@
  
  \begin{itemize}
@@ -3274,9 +3504,9 @@ diff -r ef8470f9d682 doc/enfuse-weighting-functions.tex
  
  \genidx{criteria!active}%
  \gensee{active criteria}{criteria, active}%
-diff -r ef8470f9d682 doc/enfuse.tex
---- a/doc/enfuse.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/enfuse.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/enfuse.tex
+--- a/doc/enfuse.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/enfuse.tex	Mon May 11 19:24:08 2020 -0700
 @@ -29,11 +29,13 @@
  \newcommand*{\app}{enfuse}
  \newcommand*{\appcmd}{\command{enfuse}}
@@ -3291,9 +3521,133 @@ diff -r ef8470f9d682 doc/enfuse.tex
  
  
  \finishdynamicpreamble
-diff -r ef8470f9d682 doc/index-use.tex
---- a/doc/index-use.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/index-use.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/examples/enfuse/Makefile.am
+--- a/doc/examples/enfuse/Makefile.am	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/Makefile.am	Mon May 11 19:24:08 2020 -0700
+@@ -1,12 +1,12 @@
+ datadir = $(docdir)/examples/enfuse
+ 
+-data_DATA = \
+-        Makefile.userweight \
+-        README.userweight \
+-        ../../../src/exposure_weight_base.h \
+-        fixed_power.cc linear.cc \
+-        root_finding.hh sinc.cc \
+-        tabular.cc templated_power.cc \
+-        variable_power.cc
++data_DATA = Makefile.userweight \
++            README.userweight \
++            ../../../src/exposure_weight_base.h \
++            fixed_power.cc linear.cc \
++            root_finding.hh sinc.cc \
++            tabular.cc templated_power.cc \
++            variable_power.cc
+ 
+-EXTRA_DIST = $(data_DATA)
++EXTRA_DIST = $(data_DATA) \
++             CMakeLists.txt
+diff -r a7a247e1e64b doc/examples/enfuse/fixed_power.cc
+--- a/doc/examples/enfuse/fixed_power.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/fixed_power.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/generalized_gaussian.cl
+--- a/doc/examples/enfuse/generalized_gaussian.cl	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/generalized_gaussian.cl	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2015, 2016 Christoph L. Spiel
++// Copyright (C) 2015-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/interpolator.cc
+--- a/doc/examples/enfuse/interpolator.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/interpolator.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/interpolator.hh
+--- a/doc/examples/enfuse/interpolator.hh	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/interpolator.hh	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/linear.cc
+--- a/doc/examples/enfuse/linear.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/linear.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/root_finding.hh
+--- a/doc/examples/enfuse/root_finding.hh	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/root_finding.hh	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/sinc.cc
+--- a/doc/examples/enfuse/sinc.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/sinc.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/tabular.cc
+--- a/doc/examples/enfuse/tabular.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/tabular.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/templated_power.cc
+--- a/doc/examples/enfuse/templated_power.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/templated_power.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/variable_power.cc
+--- a/doc/examples/enfuse/variable_power.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/variable_power.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2014-2016 Christoph L. Spiel
++// Copyright (C) 2014-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/examples/enfuse/variable_power.cl
+--- a/doc/examples/enfuse/variable_power.cl	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/examples/enfuse/variable_power.cl	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2015, 2016 Christoph L. Spiel
++// Copyright (C) 2015-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b doc/index-use.tex
+--- a/doc/index-use.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/index-use.tex	Mon May 11 19:24:08 2020 -0700
 @@ -6,7 +6,7 @@
  \RaggedRight
  
@@ -3314,9 +3668,9 @@ diff -r ef8470f9d682 doc/index-use.tex
  \fi
  
  
-diff -r ef8470f9d682 doc/lead-in.tex
---- a/doc/lead-in.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/lead-in.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/lead-in.tex
+--- a/doc/lead-in.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/lead-in.tex	Mon May 11 19:24:08 2020 -0700
 @@ -9,9 +9,9 @@
  \bigskip
  
@@ -3330,9 +3684,9 @@ diff -r ef8470f9d682 doc/lead-in.tex
  \end{quotation}
  
  \ifhevea
-diff -r ef8470f9d682 doc/macros.tex
---- a/doc/macros.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/macros.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/macros.tex
+--- a/doc/macros.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/macros.tex	Mon May 11 19:24:08 2020 -0700
 @@ -149,7 +149,7 @@
  \newcommand*{\flexipageref}[2]{\ifhevea\ahrefloc{#2}{#1}\else #1, \pagename~\pageref{#2}\fi}
  \WithSuffix\newcommand\flexipageref*[2]{\ifhevea\ahrefloc{#2}{#1}\else #1 (\pagename~\pageref{#2})\fi}
@@ -3351,9 +3705,9 @@ diff -r ef8470f9d682 doc/macros.tex
        \RaggedRight\frenchspacing\ttfamily}%
  {\end{trivlist}\end{divstyle}}
  
-diff -r ef8470f9d682 doc/static-preamble.tex
---- a/doc/static-preamble.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/static-preamble.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/static-preamble.tex
+--- a/doc/static-preamble.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/static-preamble.tex	Mon May 11 19:24:08 2020 -0700
 @@ -89,7 +89,7 @@
  
  \hyphenation{%
@@ -3363,9 +3717,9 @@ diff -r ef8470f9d682 doc/static-preamble.tex
    DC-Raw
    En-blend En-fuse en-tro-py
    gray-scale
-diff -r ef8470f9d682 doc/url-def.tex
---- a/doc/url-def.tex	Sun Feb 12 15:25:10 2017 +0100
-+++ b/doc/url-def.tex	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b doc/url-def.tex
+--- a/doc/url-def.tex	Tue Mar 29 10:13:05 2016 +0200
++++ b/doc/url-def.tex	Mon May 11 19:24:08 2020 -0700
 @@ -7,6 +7,7 @@
  %%     tail --follow url-state.log
  
@@ -3384,7 +3738,7 @@ diff -r ef8470f9d682 doc/url-def.tex
  \urldef{\gccgnuorg}{\url}{https://gcc.gnu.org/}
  \urldef{\gimpguruorgblendingexposures}{\url}{https://www.gimp.org/tutorials/Blending_Exposures/}
  \urldef{\gimporg}{\url}{http://www.gimp.org/}
-@@ -38,18 +42,22 @@
+@@ -38,17 +42,22 @@
  \urldef{\imagemagickorgusagechannelstrans}{\url}{https://www.imagemagick.org/Usage/transform/}
  \urldef{\imagemagickorgusagefileshistogram}{\url}{https://www.imagemagick.org/Usage/files/#histogram}
  \urldef{\imagemagickorg}{\url}{https://www.imagemagick.org/script/index.php}
@@ -3395,7 +3749,6 @@ diff -r ef8470f9d682 doc/url-def.tex
  \urldef{\libpngorg}{\url}{http://www.libpng.org/pub/png/libpng.html}
 +\urldef{\littlecmscomunboundedcmm}{\url}{http://www.littlecms.com/CIC18_UnboundedCMM.pdf}
  \urldef{\littlecmscom}{\url}{http://www.littlecms.com/}
--\urldef{\littlecmscomunboundedcmm}{\url}{http://www.littlecms.com/CIC18_UnboundedCMM.pdf}
  \urldef{\llvm}{\url}{http://llvm.org/}
  \urldef{\luminouslandscapebokeh}{\url}{https://luminous-landscape.com/bokeh/}
  \urldef{\luminouslandscapedigitalblending}{\url}{https://luminous-landscape.com/digital-blending/}
@@ -3408,7 +3761,7 @@ diff -r ef8470f9d682 doc/url-def.tex
  \urldef{\openexrcomfeatures}{\url}{http://www.openexr.com/about.html#features}
  \urldef{\openexrcom}{\url}{http://www.openexr.com/}
  \urldef{\openmporg}{\url}{http://openmp.org/wp/}
-@@ -57,6 +65,8 @@
+@@ -56,6 +65,8 @@
  \urldef{\pfstoolssourceforgenet}{\url}{http://pfstools.sourceforge.net/}
  \urldef{\rawtherapeecom}{\url}{http://www.rawtherapee.com/}
  \urldef{\remotesensingorglibtiff}{\url}{http://www.remotesensing.org/libtiff/}
@@ -3417,7 +3770,7 @@ diff -r ef8470f9d682 doc/url-def.tex
  \urldef{\snophyqueensucaexiftool}{\url}{http://www.sno.phy.queensu.ca/~phil/exiftool/}
  \urldef{\sourceforgenet}{\url}{http://sourceforge.net/}
  \urldef{\stargatewikiathetomb}{\url}{http://stargate.wikia.com/wiki/The_Tomb}
-@@ -73,6 +83,7 @@
+@@ -72,6 +83,7 @@
  \urldef{\wikipediaiccprofile}{\url}{https://en.wikipedia.org/wiki/ICC_profile}
  \urldef{\wikipediainformationentropy}{\url}{https://en.wikipedia.org/wiki/Information_entropy}
  \urldef{\wikipedialabcolorspace}{\url}{https://en.wikipedia.org/wiki/Lab_color_space}
@@ -3425,8 +3778,8 @@ diff -r ef8470f9d682 doc/url-def.tex
  \urldef{\wikipediaparallax}{\url}{https://en.wikipedia.org/wiki/Parallax}
  \urldef{\wikipediasimulatedannealing}{\url}{https://en.wikipedia.org/wiki/Simulated_annealing}
  \urldef{\wikipediastandardilluminant}{\url}{https://en.wikipedia.org/wiki/Standard_illuminant}
-diff -r ef8470f9d682 m4/ax_boost_base.m4
---- a/m4/ax_boost_base.m4	Sun Feb 12 15:25:10 2017 +0100
+diff -r a7a247e1e64b m4/ax_boost_base.m4
+--- a/m4/ax_boost_base.m4	Tue Mar 29 10:13:05 2016 +0200
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,272 +0,0 @@
 -# ===========================================================================
@@ -3701,8 +4054,8 @@ diff -r ef8470f9d682 m4/ax_boost_base.m4
 -fi
 -
 -])
-diff -r ef8470f9d682 m4/ax_boost_system.m4
---- a/m4/ax_boost_system.m4	Sun Feb 12 15:25:10 2017 +0100
+diff -r a7a247e1e64b m4/ax_boost_system.m4
+--- a/m4/ax_boost_system.m4	Tue Mar 29 10:13:05 2016 +0200
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,120 +0,0 @@
 -# ===========================================================================
@@ -3825,8 +4178,8 @@ diff -r ef8470f9d682 m4/ax_boost_system.m4
 -        LDFLAGS="$LDFLAGS_SAVED"
 -        fi
 -])
-diff -r ef8470f9d682 m4/ax_cxx_as_const.m4
---- a/m4/ax_cxx_as_const.m4	Sun Feb 12 15:25:10 2017 +0100
+diff -r a7a247e1e64b m4/ax_cxx_as_const.m4
+--- a/m4/ax_cxx_as_const.m4	Tue Mar 29 10:13:05 2016 +0200
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,41 +0,0 @@
 -# SYNOPSIS
@@ -3870,9 +4223,9 @@ diff -r ef8470f9d682 m4/ax_cxx_as_const.m4
 -  AS_IF([test "X$ax_cv_cxx_as_const" = Xyes],
 -    [AC_DEFINE(HAVE_AS_CONST,,[define if the compiler supports as_const()])])
 -])
-diff -r ef8470f9d682 m4/ax_cxx_compile_stdcxx.m4
+diff -r a7a247e1e64b m4/ax_cxx_compile_stdcxx.m4
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/m4/ax_cxx_compile_stdcxx.m4	Mon Apr 27 19:55:56 2020 -0700
++++ b/m4/ax_cxx_compile_stdcxx.m4	Mon May 11 19:24:08 2020 -0700
 @@ -0,0 +1,981 @@
 +# ===========================================================================
 +#  https://www.gnu.org/software/autoconf-archive/ax_cxx_compile_stdcxx.html
@@ -4855,8 +5208,8 @@ diff -r ef8470f9d682 m4/ax_cxx_compile_stdcxx.m4
 +#endif  // __cplusplus <= 201402L
 +
 +]])
-diff -r ef8470f9d682 m4/ax_cxx_compile_stdcxx_11.m4
---- a/m4/ax_cxx_compile_stdcxx_11.m4	Sun Feb 12 15:25:10 2017 +0100
+diff -r a7a247e1e64b m4/ax_cxx_compile_stdcxx_11.m4
+--- a/m4/ax_cxx_compile_stdcxx_11.m4	Tue Mar 29 10:13:05 2016 +0200
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,129 +0,0 @@
 -# SYNOPSIS
@@ -4988,9 +5341,9 @@ diff -r ef8470f9d682 m4/ax_cxx_compile_stdcxx_11.m4
 -    AC_SUBST(HAVE_CXX11)
 -  fi
 -])
-diff -r ef8470f9d682 m4/ax_cxx_compile_stdcxx_17.m4
+diff -r a7a247e1e64b m4/ax_cxx_compile_stdcxx_17.m4
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/m4/ax_cxx_compile_stdcxx_17.m4	Mon Apr 27 19:55:56 2020 -0700
++++ b/m4/ax_cxx_compile_stdcxx_17.m4	Mon May 11 19:24:08 2020 -0700
 @@ -0,0 +1,35 @@
 +# =============================================================================
 +#  https://www.gnu.org/software/autoconf-archive/ax_cxx_compile_stdcxx_17.html
@@ -5027,9 +5380,9 @@ diff -r ef8470f9d682 m4/ax_cxx_compile_stdcxx_17.m4
 +
 +AX_REQUIRE_DEFINED([AX_CXX_COMPILE_STDCXX])
 +AC_DEFUN([AX_CXX_COMPILE_STDCXX_17], [AX_CXX_COMPILE_STDCXX([17], [$1], [$2])])
-diff -r ef8470f9d682 src/CMakeLists.txt
---- a/src/CMakeLists.txt	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/CMakeLists.txt	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/CMakeLists.txt
+--- a/src/CMakeLists.txt	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/CMakeLists.txt	Mon May 11 19:24:08 2020 -0700
 @@ -17,9 +17,41 @@
    )
  add_custom_target(signature DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/signature.h")
@@ -5124,9 +5477,9 @@ diff -r ef8470f9d682 src/CMakeLists.txt
  if(NOT WIN32)
      # create enblend.1 and enfuse.1
      if(NOT MANDIR AND NOT $ENV{MANDIR} STREQUAL "")
-diff -r ef8470f9d682 src/DefaultSig.pm
---- a/src/DefaultSig.pm	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/DefaultSig.pm	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/DefaultSig.pm
+--- a/src/DefaultSig.pm	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/DefaultSig.pm	Mon May 11 19:24:08 2020 -0700
 @@ -109,9 +109,10 @@
  sub update_date_and_time {
      my $self = shift;
@@ -5139,9 +5492,9 @@ diff -r ef8470f9d682 src/DefaultSig.pm
  
      $self->{DATE} = $self->format_date($day_of_month, $month, $year + 1900, $day_of_week,
                                         $self->weekdays->[$day_of_week],
-diff -r ef8470f9d682 src/Makefile.am
---- a/src/Makefile.am	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/Makefile.am	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/Makefile.am
+--- a/src/Makefile.am	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/Makefile.am	Mon May 11 19:24:08 2020 -0700
 @@ -9,6 +9,7 @@
  
  enblend_SOURCES = fillpolygon.hxx functoraccessor.hxx rect2d.hxx stride.hxx \
@@ -5194,9 +5547,9 @@ diff -r ef8470f9d682 src/Makefile.am
  enfuse_CXXFLAGS = -DENFUSE_SOURCE $(AM_CXXFLAGS) $(GSL_CFLAGS) \
                    -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 \
                    -I$(top_srcdir)/src/dynamic_loader \
-diff -r ef8470f9d682 src/allocate.h
+diff -r a7a247e1e64b src/allocate.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/allocate.h	Mon Apr 27 19:55:56 2020 -0700
++++ b/src/allocate.h	Mon May 11 19:24:08 2020 -0700
 @@ -0,0 +1,244 @@
 +/*
 + * Copyright (C) 2016, 2017 Dr. Christoph L. Spiel
@@ -5442,9 +5795,37 @@ diff -r ef8470f9d682 src/allocate.h
 +// Local Variables:
 +// mode: c++
 +// End:
-diff -r ef8470f9d682 src/anneal.h
---- a/src/anneal.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/anneal.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/alternativepercentage.cc
+--- a/src/alternativepercentage.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/alternativepercentage.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015-2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/alternativepercentage.h
+--- a/src/alternativepercentage.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/alternativepercentage.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015-2016  Christoph L. Spiel
++ * Copyright (C) 2015-2017  Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/anneal.h
+--- a/src/anneal.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/anneal.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -55,48 +55,6 @@
  #endif
  
@@ -5512,9 +5893,17 @@ diff -r ef8470f9d682 src/anneal.h
      double mismatchWeight;
  
      omp::lock cerrLock;
-diff -r ef8470f9d682 src/assemble.h
---- a/src/assemble.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/assemble.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/assemble.h
+--- a/src/assemble.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/assemble.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -66,17 +66,62 @@
                                 const AlphaAccessor& mask_accessor,
                                 const vigra::ImageExportInfo& outputImageInfo)
@@ -5684,9 +6073,28 @@ diff -r ef8470f9d682 src/assemble.h
      }
  
      // Performance Optimization: Transform only if ranges do not
-diff -r ef8470f9d682 src/bounds.h
---- a/src/bounds.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/bounds.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/blend.h
+--- a/src/blend.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/blend.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/bounds.h
+--- a/src/bounds.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/bounds.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -75,7 +75,7 @@
          return NoOverlap;
      }
@@ -5705,9 +6113,26 @@ diff -r ef8470f9d682 src/bounds.h
  
  /** Determine the region-of-interest and number of blending levels to use,
   *  given the current mask-bounding-box and intersection-bounding-box.
-diff -r ef8470f9d682 src/common.h
---- a/src/common.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/common.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/calculate_state_probabilities.cl
+--- a/src/calculate_state_probabilities.cl	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/calculate_state_probabilities.cl	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2015, 2016 Christoph L. Spiel
++// Copyright (C) 2015-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b src/common.h
+--- a/src/common.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/common.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -41,9 +41,11 @@
  #include "error_message.h"
  #include "filenameparse.h"
@@ -5723,7 +6148,7 @@ diff -r ef8470f9d682 src/common.h
  
  #define MASK_COMPRESSION "DEFLATE"
  
-@@ -141,7 +143,7 @@
+@@ -141,17 +143,10 @@
  // to XYZ space (and for CIECAM then on to JCh).  The following two
  // #defines control the color transformation from and to XYZ space.
  #define RENDERING_INTENT_FOR_BLENDING INTENT_PERCEPTUAL
@@ -5731,8 +6156,18 @@ diff -r ef8470f9d682 src/common.h
 +#define TRANSFORMATION_FLAGS_FOR_BLENDING (cmsFLAGS_NOCACHE | cmsFLAGS_HIGHRESPRECALC)
  
  
+-// Select our preferred type of image depending on what ./configure
+-// tells us.
+-#ifdef CACHE_IMAGES
+-#error "The ImageCache feature has been withdrawn.  Reconfigure without ImageCache and re-build."
+-#define IMAGETYPE vigra_ext::CachedFileImage
+-#else
  #define IMAGETYPE vigra::BasicImage
-@@ -227,6 +229,25 @@
+-#endif
+ 
+ 
+ #ifdef WIN32
+@@ -234,6 +229,25 @@
  }
  
  
@@ -5758,7 +6193,7 @@ diff -r ef8470f9d682 src/common.h
  /** Answer the string representation of the boolean b. */
  std::string
  stringOfBool(bool b)
-@@ -736,7 +757,7 @@
+@@ -743,7 +757,7 @@
                      case 'n':
                          ++aNumber;
                          ++aNumberOfImages;
@@ -5767,7 +6202,7 @@ diff -r ef8470f9d682 src/common.h
                      case 'i':
                      {
                          std::ostringstream oss;
-@@ -884,6 +905,16 @@
+@@ -891,6 +905,16 @@
      assert(number_of_channels == 1U || number_of_channels == 3U);
      return number_of_channels;
  }
@@ -5784,7 +6219,7 @@ diff -r ef8470f9d682 src/common.h
  } // namespace enblend
  
  
-@@ -927,7 +958,8 @@
+@@ -934,7 +958,8 @@
          return nullptr;
      }
  }
@@ -5794,9 +6229,124 @@ diff -r ef8470f9d682 src/common.h
  
  #endif /* __COMMON_H__ */
  
-diff -r ef8470f9d682 src/dynamic_loader/win32_implementation.h
---- a/src/dynamic_loader/win32_implementation.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/dynamic_loader/win32_implementation.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/distance_transform_fh.cl
+--- a/src/distance_transform_fh.cl	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/distance_transform_fh.cl	Mon May 11 19:24:08 2020 -0700
+@@ -1,4 +1,4 @@
+-// Copyright (C) 2013-2016 Christoph L. Spiel
++// Copyright (C) 2013-2017 Christoph L. Spiel
+ //
+ // This file is part of Enblend.
+ //
+diff -r a7a247e1e64b src/dynamic_loader/Makefile.am
+--- a/src/dynamic_loader/Makefile.am	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/Makefile.am	Mon May 11 19:24:08 2020 -0700
+@@ -23,3 +23,5 @@
+         $(AM_CXXFLAGS) \
+         -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 \
+         -I$(top_srcdir)/include -I$(top_srcdir)/src -I$(top_srcdir)/src/dynamic_loader
++
++EXTRA_DIST = CMakeLists.txt
+diff -r a7a247e1e64b src/dynamic_loader/dynamic_loader.cc
+--- a/src/dynamic_loader/dynamic_loader.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/dynamic_loader.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/dynamic_loader.h
+--- a/src/dynamic_loader/dynamic_loader.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/dynamic_loader.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/dynamic_loader_implementation.h
+--- a/src/dynamic_loader/dynamic_loader_implementation.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/dynamic_loader_implementation.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/gmodule_implementation.cc
+--- a/src/dynamic_loader/gmodule_implementation.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/gmodule_implementation.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/gmodule_implementation.h
+--- a/src/dynamic_loader/gmodule_implementation.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/gmodule_implementation.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/null_implementation.h
+--- a/src/dynamic_loader/null_implementation.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/null_implementation.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/posix_implementation.cc
+--- a/src/dynamic_loader/posix_implementation.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/posix_implementation.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/posix_implementation.h
+--- a/src/dynamic_loader/posix_implementation.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/posix_implementation.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/win32_implementation.cc
+--- a/src/dynamic_loader/win32_implementation.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/win32_implementation.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Thomas Modes
++ * Copyright (C) 2015-2017 Thomas Modes
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/dynamic_loader/win32_implementation.h
+--- a/src/dynamic_loader/win32_implementation.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/dynamic_loader/win32_implementation.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Thomas Modes
++ * Copyright (C) 2015-2017 Thomas Modes
+  *
+  * This file is part of Enblend.
+  *
 @@ -27,7 +27,7 @@
  
  #define NOMINMAX
@@ -5806,9 +6356,9 @@ diff -r ef8470f9d682 src/dynamic_loader/win32_implementation.h
  
  #include "dynamic_loader_implementation.h"
  
-diff -r ef8470f9d682 src/enblend.1
---- a/src/enblend.1	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/enblend.1	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/enblend.1
+--- a/src/enblend.1	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/enblend.1	Mon May 11 19:24:08 2020 -0700
 @@ -1,7 +1,7 @@
  .\" DO NOT MODIFY THIS FILE!  It was generated by help2man 1.46.4.
 -.TH ENBLEND "1" "March 2016" "enblend 4.2" "User Commands"
@@ -5889,13 +6439,22 @@ diff -r ef8470f9d682 src/enblend.1
  .SH AUTHOR
  Written by Andrew Mihal, Christoph Spiel and others.
  .SH "REPORTING BUGS"
-diff -r ef8470f9d682 src/enblend.cc
---- a/src/enblend.cc	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/enblend.cc	Mon Apr 27 19:55:56 2020 -0700
+@@ -171,7 +189,7 @@
+ .SH COPYRIGHT
+ Copyright \(co 2004\-2009 Andrew Mihal.
+ .br
+-Copyright \(co 2009\-2016 Christoph Spiel.
++Copyright \(co 2009\-2017 Christoph Spiel.
+ .PP
+ License GPLv2+: GNU GPL version 2 or later <http://www.gnu.org/licenses/gpl.html>
+ .br
+diff -r a7a247e1e64b src/enblend.cc
+--- a/src/enblend.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/enblend.cc	Mon May 11 19:24:08 2020 -0700
 @@ -1,6 +1,6 @@
  /*
   * Copyright (C) 2004-2009 Andrew Mihal
-- * Copyright (C) 2009-2017 Christoph Spiel
+- * Copyright (C) 2009-2016 Christoph Spiel
 + * Copyright (C) 2009-2019 Christoph Spiel
   *
   * This file is part of Enblend.
@@ -5995,7 +6554,35 @@ diff -r ef8470f9d682 src/enblend.cc
          "  -w, --wrap[=MODE]      wrap around image boundary, where MODE is \"none\",\n" <<
          "                         \"horizontal\", \"vertical\", or \"both\"; default: " <<
          enblend::stringOfWraparound(WrapAround) << ";\n" <<
-@@ -486,9 +489,9 @@
+@@ -426,16 +429,11 @@
+         "\n" <<
+         "Enblend accepts arguments to any option in uppercase as\n" <<
+         "well as in lowercase letters.\n" <<
+-#if defined(CACHE_IMAGES) || \
+-    defined(OPENMP) || \
++#if defined(OPENMP) || \
+     (defined(OPENCL) && defined(PREFER_SEPARATE_OPENCL_SOURCE))
+         "\n" <<
+         "Environment:\n" <<
+ #endif
+-#ifdef CACHE_IMAGES
+-        "  TMPDIR                 The TMPDIR environment variable points to the directory,\n" <<
+-        "                         where to store ImageCache files.  If unset Enblend uses \"/tmp\".\n" <<
+-#endif
+ #ifdef OPENMP
+         "  OMP_NUM_THREADS        The OMP_NUM_THREADS environment variable sets the number\n" <<
+         "                         of threads to use in OpenMP parallel regions.  If unset\n" <<
+@@ -470,9 +468,6 @@
+ }
+ 
+ 
+-/** Make sure all cached file images get destroyed, and hence the
+- *  temporary files deleted, if we are killed.
+- */
+ void sigint_handler(int sig)
+ {
+     std::cerr << std::endl << command << ": interrupted" << std::endl;
+@@ -494,9 +489,9 @@
  
  enum AllPossibleOptions {
      VersionOption, PreAssembleOption /* -a */, NoPreAssembleOption, HelpOption, LevelsOption,
@@ -6007,7 +6594,7 @@ diff -r ef8470f9d682 src/enblend.cc
      DepthOption, AssociatedAlphaOption /* -g */,
      GPUOption, NoGPUOption, PreferredGPUOption,
      SizeAndPositionOption /* -f */,
-@@ -778,12 +781,11 @@
+@@ -786,12 +781,11 @@
          VersionId,
          DepthId,
          OutputId,
@@ -6021,7 +6608,7 @@ diff -r ef8470f9d682 src/enblend.cc
          FallbackProfileId,
          LayerSelectorId,
          MainAlgoId,
-@@ -801,7 +803,7 @@
+@@ -809,7 +803,7 @@
          {"gpu", no_argument, 0, UseGpuId},
          {"no-gpu", no_argument, 0, NoUseGpuId},
          {"prefer-gpu", required_argument, 0, PreferGpuId},
@@ -6030,7 +6617,7 @@ diff -r ef8470f9d682 src/enblend.cc
          {"pre-assemble", no_argument, 0, PreAssembleId},
          {"preassemble", no_argument, 0, PreAssembleId}, // dash-less form: not documented, not deprecated
          {"no-pre-assemble", no_argument, 0, NoPreAssembleId},
-@@ -824,13 +826,12 @@
+@@ -832,13 +826,12 @@
          {"version", no_argument, 0, VersionId},
          {"depth", required_argument, 0, DepthId},
          {"output", required_argument, 0, OutputId},
@@ -6045,7 +6632,7 @@ diff -r ef8470f9d682 src/enblend.cc
          {"fallback-profile", required_argument, 0, FallbackProfileId},
          {"layer-selector", required_argument, 0, LayerSelectorId},
          {"primary-seam-generator", required_argument, 0, MainAlgoId},
-@@ -922,13 +923,15 @@
+@@ -930,13 +923,15 @@
              optionSet.insert(NoOptimizeOption);
              break;
  
@@ -6063,7 +6650,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case VersionId:
              print_only_task = VERSION_ONLY;
              optionSet.insert(VersionOption);
-@@ -959,7 +962,8 @@
+@@ -967,7 +962,8 @@
              optionSet.insert(ShowGPUInfoOption);
              break;
  
@@ -6073,7 +6660,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case WrapAroundId:
              if (optarg != nullptr && *optarg != 0) {
                  WrapAround = enblend::wraparoundOfString(optarg);
-@@ -1002,9 +1006,7 @@
+@@ -1010,9 +1006,7 @@
              if (optarg != nullptr && *optarg != 0) {
                  std::string upper_opt(optarg);
                  enblend::to_upper(upper_opt);
@@ -6084,7 +6671,7 @@ diff -r ef8470f9d682 src/enblend.cc
                      OutputCompression = upper_opt;
                  } else if (upper_opt.find_first_not_of("0123456789") == std::string::npos) {
                      OutputCompression = "JPEG QUALITY=" + upper_opt;
-@@ -1044,7 +1046,8 @@
+@@ -1052,7 +1046,8 @@
              optionSet.insert(CompressionOption);
              break;
  
@@ -6094,7 +6681,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case DepthId:
              if (optarg != nullptr && *optarg != 0) {
                  OutputPixelType = enblend::outputPixelTypeOfString(optarg);
-@@ -1055,7 +1058,8 @@
+@@ -1063,7 +1058,8 @@
              optionSet.insert(DepthOption);
              break;
  
@@ -6104,7 +6691,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case OutputId:
              if (contains(optionSet, OutputOption)) {
                  std::cerr << command
-@@ -1071,73 +1075,74 @@
+@@ -1079,73 +1075,74 @@
              optionSet.insert(OutputOption);
              break;
  
@@ -6206,7 +6793,7 @@ diff -r ef8470f9d682 src/enblend.cc
              }
  
              if (LuminanceDifferenceWeight + ChrominanceDifferenceWeight == 0.0) {
-@@ -1150,33 +1155,33 @@
+@@ -1158,33 +1155,33 @@
          }
  
          case AnnealId: {
@@ -6262,7 +6849,7 @@ diff -r ef8470f9d682 src/enblend.cc
                  //< minimum-anneal-tau 0
                  if (tau <= 0.0) {
                      std::cerr << command
-@@ -1195,20 +1200,19 @@
+@@ -1203,20 +1200,19 @@
                  ++token;
              }
  
@@ -6295,7 +6882,7 @@ diff -r ef8470f9d682 src/enblend.cc
                      failed = true;
                  }
                  //< minimum-anneal-deltae-max 0
-@@ -1221,21 +1225,20 @@
+@@ -1229,21 +1225,20 @@
                  ++token;
              }
  
@@ -6329,7 +6916,7 @@ diff -r ef8470f9d682 src/enblend.cc
                      failed = true;
                  }
                  //< minimum-anneal-deltae-min 0
-@@ -1254,21 +1257,22 @@
+@@ -1262,21 +1257,22 @@
                  failed = true;
              }
  
@@ -6365,7 +6952,7 @@ diff -r ef8470f9d682 src/enblend.cc
                      failed = true;
                  }
                  //< minimum-anneal-kmax 3
-@@ -1319,20 +1323,20 @@
+@@ -1327,20 +1323,20 @@
          }
  
          case OptimizerWeightsId: {
@@ -6392,7 +6979,7 @@ diff -r ef8470f9d682 src/enblend.cc
                                              [](double x) {return x >= 0.0;},
                                              "negative optimizer weight; will use 0.0",
                                              0.0);
-@@ -1346,7 +1350,8 @@
+@@ -1354,7 +1350,8 @@
              break;
          }
  
@@ -6402,7 +6989,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case VerboseId:
              if (optarg != nullptr && *optarg != 0) {
                  Verbose = enblend::numberOfString(optarg,
-@@ -1380,7 +1385,8 @@
+@@ -1388,7 +1385,8 @@
              optionSet.insert(DijkstraRadiusOption);
              break;
  
@@ -6412,7 +6999,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case PreAssembleId:
              OneAtATime = false;
              optionSet.insert(PreAssembleOption);
-@@ -1416,23 +1422,6 @@
+@@ -1424,23 +1422,6 @@
              optionSet.insert(BlendColorspaceOption);
              break;
  
@@ -6436,7 +7023,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case FallbackProfileId:
              if (enblend::can_open_file(optarg)) {
                  FallbackProfile = cmsOpenProfileFromFile(optarg, "r");
-@@ -1501,7 +1490,8 @@
+@@ -1509,7 +1490,8 @@
              optionSet.insert(AssociatedAlphaOption);
              break;
  
@@ -6446,7 +7033,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case LevelsId:
              if (optarg != nullptr && *optarg != 0) {
                  std::string levels(optarg);
-@@ -1533,13 +1523,6 @@
+@@ -1541,13 +1523,6 @@
              optionSet.insert(LevelsOption);
              break;
  
@@ -6460,7 +7047,7 @@ diff -r ef8470f9d682 src/enblend.cc
          case 'x':
              Checkpoint = true;
              optionSet.insert(CheckpointOption);
-@@ -1558,22 +1541,22 @@
+@@ -1566,22 +1541,22 @@
          }
  
          case ParameterId: {
@@ -6491,7 +7078,7 @@ diff -r ef8470f9d682 src/enblend.cc
                      if (value.empty()) {
                          std::cerr <<
                              command << ": parameter key \"" << key << "\" lacks a value;\n" <<
-@@ -1596,13 +1579,13 @@
+@@ -1604,13 +1579,13 @@
          }
  
          case NoParameterId: {
@@ -6510,7 +7097,7 @@ diff -r ef8470f9d682 src/enblend.cc
                  enblend::trim(key);
  
                  if (key == "*") {
-@@ -1820,7 +1803,7 @@
+@@ -1828,7 +1803,7 @@
      }
  
      if (parameter::as_boolean("dump-global-variables", false)) {
@@ -6519,7 +7106,7 @@ diff -r ef8470f9d682 src/enblend.cc
      }
  
      sig.check();
-@@ -2052,12 +2035,7 @@
+@@ -2060,12 +2035,7 @@
                  }
              }
  
@@ -6533,7 +7120,7 @@ diff -r ef8470f9d682 src/enblend.cc
          }
  
          ++layer;
-@@ -2111,13 +2089,13 @@
+@@ -2119,13 +2089,13 @@
  
      // Switch to fine mask, if the smallest coarse mask would be less
      // than 64 pixels wide or high.
@@ -6549,7 +7136,7 @@ diff -r ef8470f9d682 src/enblend.cc
              std::cerr << command
                        << ": warning: fine mask combined with graphcut incompatible with mask optimization\n"
                        << command << ": note: defaulting to no optimization"
-@@ -2133,12 +2111,26 @@
+@@ -2141,12 +2111,26 @@
      }
  
      // Create the Info for the output file.
@@ -6578,7 +7165,7 @@ diff -r ef8470f9d682 src/enblend.cc
          if (OutputSizeGiven) {
              inputUnion |= vigra::Rect2D(OutputOffsetXCmdLine,
                                          OutputOffsetYCmdLine,
-@@ -2400,7 +2392,7 @@
+@@ -2408,7 +2392,7 @@
          exit(1);
      } catch (vigra::StdException& e) {
          std::cerr << std::endl
@@ -6587,9 +7174,17 @@ diff -r ef8470f9d682 src/enblend.cc
                    << command << ": " << e.what()
                    << std::endl;
          exit(1);
-diff -r ef8470f9d682 src/enblend.h
---- a/src/enblend.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/enblend.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/enblend.h
+--- a/src/enblend.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/enblend.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -34,10 +34,12 @@
  
  #include "rect2d.hxx"
@@ -6690,9 +7285,9 @@ diff -r ef8470f9d682 src/enblend.h
  }
  
  } // namespace enblend
-diff -r ef8470f9d682 src/enfuse.1
---- a/src/enfuse.1	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/enfuse.1	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/enfuse.1
+--- a/src/enfuse.1	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/enfuse.1	Mon May 11 19:24:08 2020 -0700
 @@ -1,7 +1,7 @@
  .\" DO NOT MODIFY THIS FILE!  It was generated by help2man 1.46.4.
 -.TH ENFUSE "1" "March 2016" "enfuse 4.2" "User Commands"
@@ -6774,13 +7369,22 @@ diff -r ef8470f9d682 src/enfuse.1
  .SH AUTHOR
  Written by Andrew Mihal, Christoph Spiel and others.
  .SH "REPORTING BUGS"
-diff -r ef8470f9d682 src/enfuse.cc
---- a/src/enfuse.cc	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/enfuse.cc	Mon Apr 27 19:55:56 2020 -0700
+@@ -210,7 +229,7 @@
+ .SH COPYRIGHT
+ Copyright \(co 2004\-2009 Andrew Mihal.
+ .br
+-Copyright \(co 2009\-2016 Christoph Spiel.
++Copyright \(co 2009\-2017 Christoph Spiel.
+ .PP
+ License GPLv2+: GNU GPL version 2 or later <http://www.gnu.org/licenses/gpl.html>
+ .br
+diff -r a7a247e1e64b src/enfuse.cc
+--- a/src/enfuse.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/enfuse.cc	Mon May 11 19:24:08 2020 -0700
 @@ -1,6 +1,6 @@
  /*
   * Copyright (C) 2004-2009 Andrew Mihal
-- * Copyright (C) 2009-2017 Christoph Spiel
+- * Copyright (C) 2009-2016 Christoph Spiel
 + * Copyright (C) 2009-2019 Christoph Spiel
   *
   * This file is part of Enblend.
@@ -6869,7 +7473,35 @@ diff -r ef8470f9d682 src/enfuse.cc
          "  -w, --wrap[=MODE]      wrap around image boundary, where MODE is \"none\",\n" <<
          "                         \"horizontal\", \"vertical\", or \"both\"; default: " <<
          enblend::stringOfWraparound(WrapAround) << ";\n" <<
-@@ -522,9 +525,9 @@
+@@ -462,16 +465,11 @@
+         "\n" <<
+         "Enfuse accepts arguments to any option in uppercase as\n" <<
+         "well as in lowercase letters.\n" <<
+-#if defined(CACHE_IMAGES) || \
+-    defined(OPENMP) || \
++#if defined(OPENMP) || \
+     (defined(OPENCL) && defined(PREFER_SEPARATE_OPENCL_SOURCE))
+         "\n" <<
+         "Environment:\n" <<
+ #endif
+-#ifdef CACHE_IMAGES
+-        "  TMPDIR                 The TMPDIR environment variable points to the directory,\n" <<
+-        "                         where to store ImageCache files.  If unset Enfuse uses \"/tmp\".\n" <<
+-#endif
+ #ifdef OPENMP
+         "  OMP_NUM_THREADS        The OMP_NUM_THREADS environment variable sets the number\n" <<
+         "                         of threads to use in OpenMP parallel regions.  If unset\n" <<
+@@ -507,9 +505,6 @@
+ }
+ 
+ 
+-/** Make sure all cached file images get destroyed, and hence the
+- *  temporary files deleted, if we are killed.
+- */
+ void sigint_handler(int sig)
+ {
+     std::cerr << std::endl << command << ": interrupted" << std::endl;
+@@ -530,9 +525,9 @@
  
  
  enum AllPossibleOptions {
@@ -6881,7 +7513,7 @@ diff -r ef8470f9d682 src/enfuse.cc
      DepthOption, AssociatedAlphaOption /* -g */,
      GPUOption, NoGPUOption, PreferredGPUOption,
      SizeAndPositionOption /* -f */,
-@@ -769,19 +772,18 @@
+@@ -777,19 +772,18 @@
                      const std::string& an_option_name)
  {
      if (an_option_argument != nullptr && *an_option_argument != 0) {
@@ -6908,7 +7540,7 @@ diff -r ef8470f9d682 src/enfuse.cc
              std::cerr << command
                        << ": warning: ignoring trailing garbage in \"" << an_option_name << "\"" << std::endl;
          }
-@@ -891,8 +893,8 @@
+@@ -899,8 +893,8 @@
          WeightExposureId,
          WeightContrastId,
          WeightSaturationId,
@@ -6919,7 +7551,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          ExposureWeightFunctionId,
          MinCurvatureId,
          EdgeScaleId,
-@@ -908,12 +910,11 @@
+@@ -916,12 +910,11 @@
          VersionId,
          DepthId,
          OutputId,
@@ -6933,7 +7565,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          FallbackProfileId,
          ExposureCutoffId,
          LoadMasksId,
-@@ -931,14 +932,12 @@
+@@ -939,14 +932,12 @@
          {"gpu", no_argument, 0, UseGpuId},
          {"no-gpu", no_argument, 0, NoUseGpuId},
          {"prefer-gpu", required_argument, 0, PreferGpuId},
@@ -6949,7 +7581,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          {"exposure-width", required_argument, 0, ExposureWidthId},
          {"exposure-weight-function", required_argument, 0, ExposureWeightFunctionId},
          {"contrast-min-curvature", required_argument, 0, MinCurvatureId},
-@@ -955,14 +954,13 @@
+@@ -963,14 +954,13 @@
          {"version", no_argument, 0, VersionId},
          {"depth", required_argument, 0, DepthId},
          {"output", required_argument, 0, OutputId},
@@ -6965,7 +7597,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          {"fallback-profile", required_argument, 0, FallbackProfileId},
          {"exposure-cutoff", required_argument, 0, ExposureCutoffId},
          {"load-mask", optional_argument, 0, LoadMasksId}, // singular form: not documented, not deprecated
-@@ -1051,13 +1049,15 @@
+@@ -1059,13 +1049,15 @@
              optionSet.insert(SoftMaskOption);
              break;
  
@@ -6983,7 +7615,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case VersionId:
              print_only_task = VERSION_ONLY;
              optionSet.insert(VersionOption);
-@@ -1088,7 +1088,8 @@
+@@ -1096,7 +1088,8 @@
              optionSet.insert(ShowGPUInfoOption);
              break;
  
@@ -6993,7 +7625,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case WrapAroundId:
              if (optarg != nullptr && *optarg != 0) {
                  WrapAround = enblend::wraparoundOfString(optarg);
-@@ -1128,80 +1129,78 @@
+@@ -1136,80 +1129,78 @@
          }
  
          case EdgeScaleId: {
@@ -7123,7 +7755,7 @@ diff -r ef8470f9d682 src/enfuse.cc
              }
  
              optionSet.insert(EdgeScaleOption);
-@@ -1209,62 +1208,58 @@
+@@ -1217,62 +1208,58 @@
          }
  
          case EntropyCutoffId: {
@@ -7208,7 +7840,7 @@ diff -r ef8470f9d682 src/enfuse.cc
              }
  
              optionSet.insert(EntropyCutoffOption);
-@@ -1272,73 +1267,69 @@
+@@ -1280,73 +1267,69 @@
          }
  
          case ExposureCutoffId: {
@@ -7308,7 +7940,7 @@ diff -r ef8470f9d682 src/enfuse.cc
              }
  
              optionSet.insert(ExposureCutoffOption);
-@@ -1349,9 +1340,7 @@
+@@ -1357,9 +1340,7 @@
              if (optarg != nullptr && *optarg != 0) {
                  std::string upper_opt(optarg);
                  enblend::to_upper(upper_opt);
@@ -7319,7 +7951,7 @@ diff -r ef8470f9d682 src/enfuse.cc
                      OutputCompression = upper_opt;
                  } else if (upper_opt.find_first_not_of("0123456789") == std::string::npos) {
                      OutputCompression = "JPEG QUALITY=" + upper_opt;
-@@ -1401,7 +1390,8 @@
+@@ -1409,7 +1390,8 @@
              optionSet.insert(GrayProjectorOption);
              break;
  
@@ -7329,7 +7961,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case DepthId:
              if (optarg != nullptr && *optarg != 0) {
                  OutputPixelType = enblend::outputPixelTypeOfString(optarg);
-@@ -1412,7 +1402,8 @@
+@@ -1420,7 +1402,8 @@
              optionSet.insert(DepthOption);
              break;
  
@@ -7339,7 +7971,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case OutputId:
              if (contains(optionSet, OutputOption)) {
                  std::cerr << command
-@@ -1428,6 +1419,11 @@
+@@ -1436,6 +1419,11 @@
              optionSet.insert(OutputOption);
              break;
  
@@ -7351,7 +7983,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case LoadMasksId:
              fill_mask_templates(optarg, SoftMaskTemplate, HardMaskTemplate, "--load-masks");
              LoadMasks = true;
-@@ -1491,9 +1487,6 @@
+@@ -1499,9 +1487,6 @@
              optionSet.insert(SaturationWeightOption);
              break;
  
@@ -7361,7 +7993,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case ExposureOptimumId:
              if (optarg != nullptr && *optarg != 0) {
                  ExposureOptimum =
-@@ -1511,10 +1504,6 @@
+@@ -1519,10 +1504,6 @@
              optionSet.insert(ExposureOptimumOption);
              break;
  
@@ -7372,7 +8004,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case ExposureWidthId:
              if (optarg != nullptr && *optarg != 0) {
                  ExposureWidth =
-@@ -1530,31 +1519,31 @@
+@@ -1538,31 +1519,31 @@
              break;
  
          case ExposureWeightFunctionId: {
@@ -7413,7 +8045,7 @@ diff -r ef8470f9d682 src/enfuse.cc
              }
  
              optionSet.insert(ExposureWeightFunctionOption);
-@@ -1578,7 +1567,8 @@
+@@ -1586,7 +1567,8 @@
              optionSet.insert(EntropyWeightOption);
              break;
  
@@ -7423,7 +8055,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case VerboseId:
              if (optarg != nullptr && *optarg != 0) {
                  Verbose =
-@@ -1657,23 +1647,6 @@
+@@ -1665,23 +1647,6 @@
              optionSet.insert(BlendColorspaceOption);
              break;
  
@@ -7447,7 +8079,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case FallbackProfileId:
              if (enblend::can_open_file(optarg)) {
                  FallbackProfile = cmsOpenProfileFromFile(optarg, "r");
-@@ -1715,7 +1688,8 @@
+@@ -1723,7 +1688,8 @@
              optionSet.insert(AssociatedAlphaOption);
              break;
  
@@ -7457,7 +8089,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          case LevelsId:
              if (optarg != nullptr && *optarg != 0) {
                  std::string levels(optarg);
-@@ -1760,22 +1734,22 @@
+@@ -1768,22 +1734,22 @@
          }
  
          case ParameterId: {
@@ -7488,7 +8120,7 @@ diff -r ef8470f9d682 src/enfuse.cc
                      if (value.empty()) {
                          std::cerr <<
                              command << ": parameter key \"" << key << "\" lacks a value;\n" <<
-@@ -1798,13 +1772,13 @@
+@@ -1806,13 +1772,13 @@
          }
  
          case NoParameterId: {
@@ -7507,7 +8139,7 @@ diff -r ef8470f9d682 src/enfuse.cc
                  enblend::trim(key);
  
                  if (key == "*") {
-@@ -2053,7 +2027,7 @@
+@@ -2061,7 +2027,7 @@
      }
  
      if (parameter::as_boolean("dump-global-variables", false)) {
@@ -7516,7 +8148,7 @@ diff -r ef8470f9d682 src/enfuse.cc
      }
  
      sig.check();
-@@ -2337,12 +2311,26 @@
+@@ -2345,12 +2311,26 @@
      }
  
      // Create the Info for the output file.
@@ -7545,7 +8177,7 @@ diff -r ef8470f9d682 src/enfuse.cc
          if (OutputSizeGiven) {
              inputUnion |= vigra::Rect2D(OutputOffsetXCmdLine,
                                          OutputOffsetYCmdLine,
-@@ -2612,7 +2600,7 @@
+@@ -2620,7 +2600,7 @@
          exit(1);
      } catch (vigra::StdException& e) {
          std::cerr << std::endl
@@ -7554,9 +8186,17 @@ diff -r ef8470f9d682 src/enfuse.cc
                    << command << ": " << e.what()
                    << std::endl;
          exit(1);
-diff -r ef8470f9d682 src/enfuse.h
---- a/src/enfuse.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/enfuse.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/enfuse.h
+--- a/src/enfuse.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/enfuse.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -39,11 +39,13 @@
  #include <vigra/stdimage.hxx>
  #include <vigra/transformimage.hxx>
@@ -7673,12 +8313,62 @@ diff -r ef8470f9d682 src/enfuse.h
  }
  
  } // namespace enblend
-diff -r ef8470f9d682 src/filenameparse.cc
---- a/src/filenameparse.cc	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/filenameparse.cc	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/error_message.cc
+--- a/src/error_message.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/error_message.cc	Mon May 11 19:24:08 2020 -0700
 @@ -1,5 +1,5 @@
  /*
-- * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/error_message.h
+--- a/src/error_message.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/error_message.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/exposure_weight.cc
+--- a/src/exposure_weight.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/exposure_weight.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/exposure_weight.h
+--- a/src/exposure_weight.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/exposure_weight.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/exposure_weight_base.h
+--- a/src/exposure_weight_base.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/exposure_weight_base.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2013-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  */
+diff -r a7a247e1e64b src/filenameparse.cc
+--- a/src/filenameparse.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/filenameparse.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
 + * Copyright (C) 2009-2019 Dr. Christoph L. Spiel
   *
   * This file is part of Enblend.
@@ -8078,9 +8768,46 @@ diff -r ef8470f9d682 src/filenameparse.cc
  // Local Variables:
  // mode: c++
  // End:
-diff -r ef8470f9d682 src/fillpolygon.hxx
---- a/src/fillpolygon.hxx	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/fillpolygon.hxx	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/filenameparse.h
+--- a/src/filenameparse.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/filenameparse.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/filespec.cc
+--- a/src/filespec.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/filespec.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Christoph L. Spiel
++ * Copyright (C) 2009-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/filespec.h
+--- a/src/filespec.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/filespec.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Christoph L. Spiel
++ * Copyright (C) 2009-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/fillpolygon.hxx
+--- a/src/fillpolygon.hxx	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/fillpolygon.hxx	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2012-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2012-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -252,7 +252,7 @@
                  {
                  case TOUCHING:
@@ -8090,9 +8817,17 @@ diff -r ef8470f9d682 src/fillpolygon.hxx
  
                  case CROSSING:
                      *result++ = i->first;
-diff -r ef8470f9d682 src/fixmath.h
---- a/src/fixmath.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/fixmath.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/fixmath.h
+--- a/src/fixmath.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/fixmath.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -42,10 +42,23 @@
  #include "parameter.h"
  
@@ -9293,9 +10028,9 @@ diff -r ef8470f9d682 src/fixmath.h
  
          return DestVectorType(DestTraits::fromRealPromote(rgb_dest_scale * rgb[0]),
                                DestTraits::fromRealPromote(rgb_dest_scale * rgb[1]),
-diff -r ef8470f9d682 src/functoraccessor.hxx
---- a/src/functoraccessor.hxx	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/functoraccessor.hxx	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/functoraccessor.hxx
+--- a/src/functoraccessor.hxx	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/functoraccessor.hxx	Mon May 11 19:24:08 2020 -0700
 @@ -405,7 +405,7 @@
  /** An accessor to encapsulate write access to a multiband image,
      and move divide it into two images.
@@ -9314,9 +10049,16 @@ diff -r ef8470f9d682 src/functoraccessor.hxx
      every access.
  
      @bug This is not a complete accessor, only write operations are supported.
-diff -r ef8470f9d682 src/global.h
---- a/src/global.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/global.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/global.h
+--- a/src/global.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/global.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -43,39 +43,50 @@
  
  // Defines to control how many -v flags are required for each type
@@ -9391,9 +10133,16 @@ diff -r ef8470f9d682 src/global.h
  
  namespace enblend
  {
-diff -r ef8470f9d682 src/graphcut.h
---- a/src/graphcut.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/graphcut.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/graphcut.h
+--- a/src/graphcut.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/graphcut.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2011-2016 Mikolaj Leszczynski
++ * Copyright (C) 2011-2017 Mikolaj Leszczynski
+  *
+  * This file is part of Enblend.
+  *
 @@ -74,11 +74,11 @@
  
  namespace enblend
@@ -9521,9 +10270,16 @@ diff -r ef8470f9d682 src/graphcut.h
      }
  } /* namespace enblend */
  
-diff -r ef8470f9d682 src/introspection.cc
---- a/src/introspection.cc	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/introspection.cc	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/introspection.cc
+--- a/src/introspection.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/introspection.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -31,6 +31,10 @@
  #include <config.h>
  #endif
@@ -9544,7 +10300,40 @@ diff -r ef8470f9d682 src/introspection.cc
          {
  #ifdef ENFUSE_SOURCE
              {
-@@ -108,6 +112,14 @@
+@@ -70,32 +74,6 @@
+             }
+ #endif // ENFUSE_SOURCE
+ 
+-#ifdef CACHE_IMAGES
+-            std::cout << "Extra feature: image cache: yes\n";
+-            {
+-#ifdef WIN32
+-                char lpPathBuffer[MAX_PATH];
+-                const DWORD dwRetVal = GetTempPath(MAX_PATH, lpPathBuffer);
+-                if (dwRetVal <= MAX_PATH && dwRetVal != 0)
+-                {
+-                    std::cout << "  - cache file located in \"" << lpPathBuffer << "\"\n";
+-                }
+-#else
+-                const char* tmpdir = getenv("TMPDIR");
+-                std::cout << "  - environment variable TMPDIR ";
+-                if (tmpdir == nullptr)
+-                {
+-                    std::cout << "not set, cache file in default directory \"/tmp\"\n";
+-                } else
+-                {
+-                    std::cout << "set, cache file located in \"" << tmpdir << "\"\n";
+-                }
+-#endif
+-            }
+-#else
+-            std::cout << "Extra feature: image cache: no\n";
+-#endif
+-
+ #ifdef OPENMP
+             const bool have_dynamic = have_openmp_dynamic();
+             std::cout <<
+@@ -134,12 +112,20 @@
  #else
              std::cout << "Extra feature: OpenCL: no\n";
  #endif
@@ -9559,7 +10348,14 @@ diff -r ef8470f9d682 src/introspection.cc
              std::cout << "\n";
          }
  
-@@ -251,6 +263,9 @@
+         std::cout <<
+             "Copyright (C) 2004-2009 Andrew Mihal.\n" <<
+-            "Copyright (C) 2009-2016 Christoph Spiel.\n" <<
++            "Copyright (C) 2009-2017 Christoph Spiel.\n" <<
+             "\n" <<
+             "License GPLv2+: GNU GPL version 2 or later <http://www.gnu.org/licenses/gpl.html>\n" <<
+             "This is free software: you are free to change and redistribute it.\n" <<
+@@ -277,6 +263,9 @@
  #endif // OPENCL
  
          std::cout << "Libraries\n" <<
@@ -9569,9 +10365,75 @@ diff -r ef8470f9d682 src/introspection.cc
              "  GSL:        " << GSL_VERSION << "\n" <<
              //"  JPEG:       " << "\n" <<
              "  Little CMS: " << LCMS_VERSION / 1000 << '.' << (LCMS_VERSION / 10) % 100 << '.' << LCMS_VERSION % 10 << "\n" <<
-diff -r ef8470f9d682 src/layer_selection/selector.cc
---- a/src/layer_selection/selector.cc	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/layer_selection/selector.cc	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/introspection.h
+--- a/src/introspection.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/introspection.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/layer_selection/Makefile.am
+--- a/src/layer_selection/Makefile.am	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/layer_selection/Makefile.am	Mon May 11 19:24:08 2020 -0700
+@@ -12,3 +12,5 @@
+ liblayersel_a_CXXFLAGS = $(AM_CXXFLAGS) \
+                          -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 \
+                          -I$(top_srcdir)/include -I$(top_srcdir)/src -I$(top_srcdir)/src/layer_selection
++
++EXTRA_DIST = CMakeLists.txt
+diff -r a7a247e1e64b src/layer_selection/info.cc
+--- a/src/layer_selection/info.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/layer_selection/info.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2010-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2010-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/layer_selection/info.h
+--- a/src/layer_selection/info.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/layer_selection/info.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2010-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2010-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/layer_selection/layer_selection.cc
+--- a/src/layer_selection/layer_selection.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/layer_selection/layer_selection.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2010-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2010-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/layer_selection/layer_selection.h
+--- a/src/layer_selection/layer_selection.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/layer_selection/layer_selection.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2010-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2010-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/layer_selection/selector.cc
+--- a/src/layer_selection/selector.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/layer_selection/selector.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2010-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2010-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -24,7 +24,7 @@
  #include <iostream>             // WHILE DEBUGGING
  #include <memory>               // std::unique_ptr
@@ -9684,9 +10546,27 @@ diff -r ef8470f9d682 src/layer_selection/selector.cc
                                                                 range_separator.length())));
  
                  if (first_index.get() == nullptr)
-diff -r ef8470f9d682 src/mask.h
---- a/src/mask.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/mask.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/layer_selection/selector.h
+--- a/src/layer_selection/selector.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/layer_selection/selector.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2010-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2010-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/mask.h
+--- a/src/mask.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/mask.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -1139,20 +1139,19 @@
  
      search_for_isolated_points(blackAlpha);
@@ -9734,9 +10614,49 @@ diff -r ef8470f9d682 src/mask.h
  
      // mem usage before: CoarseMask: 2/8 * uBB * MaskType
      //                   !CoarseMask: 2 * uBB * MaskType
-diff -r ef8470f9d682 src/metadata.cc
+diff -r a7a247e1e64b src/maskcommon.h
+--- a/src/maskcommon.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/maskcommon.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2004-2016 Andrew Mihal, Mikolaj Leszczynski
++ * Copyright (C) 2004-2017 Andrew Mihal, Mikolaj Leszczynski
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/masktypedefs.h
+--- a/src/masktypedefs.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/masktypedefs.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2011-2016 Mikolaj Leszczynski
++ * Copyright (C) 2011-2017 Mikolaj Leszczynski
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/mersenne.cc
+--- a/src/mersenne.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/mersenne.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/mersenne.h
+--- a/src/mersenne.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/mersenne.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/metadata.cc
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/metadata.cc	Mon Apr 27 19:55:56 2020 -0700
++++ b/src/metadata.cc	Mon May 11 19:24:08 2020 -0700
 @@ -0,0 +1,235 @@
 +/*
 + * Copyright (C) 2016, 2017 Christoph L. Spiel
@@ -9973,9 +10893,9 @@ diff -r ef8470f9d682 src/metadata.cc
 +    }
 +#endif // HAVE_EXIV2
 +} // namespace metadata
-diff -r ef8470f9d682 src/metadata.h
+diff -r a7a247e1e64b src/metadata.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/metadata.h	Mon Apr 27 19:55:56 2020 -0700
++++ b/src/metadata.h	Mon May 11 19:24:08 2020 -0700
 @@ -0,0 +1,87 @@
 +/*
 + * Copyright (C) 2016, 2017 Dr. Christoph L. Spiel
@@ -10064,9 +10984,26 @@ diff -r ef8470f9d682 src/metadata.h
 +// Local Variables:
 +// mode: c++
 +// End:
-diff -r ef8470f9d682 src/minimizer.cc
---- a/src/minimizer.cc	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/minimizer.cc	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/mga.h
+--- a/src/mga.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/mga.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2008-2016 Christoph L. Spiel
++ * Copyright (C) 2008-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/minimizer.cc
+--- a/src/minimizer.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/minimizer.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2012-2016 Christoph L. Spiel
++ * Copyright (C) 2012-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -18,6 +18,10 @@
   * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   */
@@ -10133,12 +11070,12 @@ diff -r ef8470f9d682 src/minimizer.cc
      return this;
  }
  
-diff -r ef8470f9d682 src/minimizer.h
---- a/src/minimizer.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/minimizer.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/minimizer.h
+--- a/src/minimizer.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/minimizer.h	Mon May 11 19:24:08 2020 -0700
 @@ -1,5 +1,5 @@
  /*
-- * Copyright (C) 2012-2017 Dr. Christoph L. Spiel
+- * Copyright (C) 2012-2016 Dr. Christoph L. Spiel
 + * Copyright (C) 2012-2019 Dr. Christoph L. Spiel
   *
   * This file is part of Enblend.
@@ -10204,9 +11141,47 @@ diff -r ef8470f9d682 src/minimizer.h
  };
  
  
-diff -r ef8470f9d682 src/opencl.cc
---- a/src/opencl.cc	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/opencl.cc	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/muopt.h
+--- a/src/muopt.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/muopt.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2012-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2012-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/nearest.h
+--- a/src/nearest.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/nearest.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Christoph L. Spiel
++ * Copyright (C) 2009-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/numerictraits.h
+--- a/src/numerictraits.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/numerictraits.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/opencl.cc
+--- a/src/opencl.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/opencl.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Christoph L. Spiel
++ * Copyright (C) 2013-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -477,7 +477,7 @@
      construct_search_path()
      {
@@ -10216,9 +11191,16 @@ diff -r ef8470f9d682 src/opencl.cc
          // binary.
          std::vector<std::string> paths;
  
-diff -r ef8470f9d682 src/opencl.h
---- a/src/opencl.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/opencl.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/opencl.h
+--- a/src/opencl.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/opencl.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Christoph L. Spiel
++ * Copyright (C) 2013-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -63,36 +63,6 @@
  #define UNUSEDVAR __attribute__((unused))
  #endif
@@ -10265,9 +11247,96 @@ diff -r ef8470f9d682 src/opencl.h
          }
      }; // class ScopedReadMap
  
-diff -r ef8470f9d682 src/parameter.h
---- a/src/parameter.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/parameter.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/opencl_anneal.h
+--- a/src/opencl_anneal.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/opencl_anneal.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/opencl_exposure_weight.cc
+--- a/src/opencl_exposure_weight.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/opencl_exposure_weight.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/opencl_exposure_weight.h
+--- a/src/opencl_exposure_weight.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/opencl_exposure_weight.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/opencl_vigra.h
+--- a/src/opencl_vigra.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/opencl_vigra.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph L. Spiel
++ * Copyright (C) 2015-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/openmp_def.h
+--- a/src/openmp_def.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/openmp_def.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Christoph L. Spiel
++ * Copyright (C) 2009-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/openmp_lock.h
+--- a/src/openmp_lock.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/openmp_lock.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Christoph L. Spiel
++ * Copyright (C) 2013-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/openmp_vigra.h
+--- a/src/openmp_vigra.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/openmp_vigra.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Christoph L. Spiel
++ * Copyright (C) 2013-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/parameter.cc
+--- a/src/parameter.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/parameter.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph Spiel
++ * Copyright (C) 2015-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/parameter.h
+--- a/src/parameter.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/parameter.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2015, 2016 Christoph Spiel
++ * Copyright (C) 2015-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -69,7 +69,7 @@
      //         std::string s = parameter::as_string("foobar");
      //         int i = parameter::as_integer("foobar");
@@ -10286,9 +11355,38 @@ diff -r ef8470f9d682 src/parameter.h
      //         bool b = parameter::as_boolean("foobar", true);
      //
      // (4) React on parameter with a non-local change of control flow
-diff -r ef8470f9d682 src/pyramid.h
---- a/src/pyramid.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/pyramid.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/path.h
+--- a/src/path.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/path.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/postoptimizer.h
+--- a/src/postoptimizer.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/postoptimizer.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2011-2016 Mikolaj Leszczynski
++ * Copyright (C) 2011-2017 Mikolaj Leszczynski
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/pyramid.h
+--- a/src/pyramid.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/pyramid.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,6 +1,6 @@
+ /*
+  * Copyright (C) 2004-2009 Andrew Mihal
+- * Copyright (C) 2009-2016 Christoph Spiel
++ * Copyright (C) 2009-2017 Christoph Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -160,7 +160,7 @@
   *  sr1 <= sr0 + srp
   *  scp[x] <= 4*(sr1 + 6*sr0 + srp + current)
@@ -10316,9 +11414,36 @@ diff -r ef8470f9d682 src/pyramid.h
  template<typename T1, typename T2, typename T3>
  struct FromPromotePlusFunctorWrapper :
      public std::binary_function<T1, T2, T3>
-diff -r ef8470f9d682 src/tiff_message.cc
---- a/src/tiff_message.cc	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/tiff_message.cc	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/self_test.cc
+--- a/src/self_test.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/self_test.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/self_test.h
+--- a/src/self_test.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/self_test.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/tiff_message.cc
+--- a/src/tiff_message.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/tiff_message.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -19,6 +19,7 @@
   */
  
@@ -10355,9 +11480,36 @@ diff -r ef8470f9d682 src/tiff_message.cc
  }
  
  
-diff -r ef8470f9d682 src/timer.h
---- a/src/timer.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/timer.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/tiff_message.h
+--- a/src/tiff_message.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/tiff_message.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2009-2016 Dr. Christoph L. Spiel
++ * Copyright (C) 2009-2017 Dr. Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/timer.cc
+--- a/src/timer.cc	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/timer.cc	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Christoph L. Spiel
++ * Copyright (C) 2013-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
+diff -r a7a247e1e64b src/timer.h
+--- a/src/timer.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/timer.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2016 Christoph L. Spiel
++ * Copyright (C) 2013-2017 Christoph L. Spiel
+  *
+  * This file is part of Enblend.
+  *
 @@ -34,7 +34,7 @@
  #include <time.h>        // clock_t, clock(); timespec, clock_gettime()
  
@@ -10367,9 +11519,16 @@ diff -r ef8470f9d682 src/timer.h
  #endif
  
  
-diff -r ef8470f9d682 src/win32helpers/delayHelper.h
---- a/src/win32helpers/delayHelper.h	Sun Feb 12 15:25:10 2017 +0100
-+++ b/src/win32helpers/delayHelper.h	Mon Apr 27 19:55:56 2020 -0700
+diff -r a7a247e1e64b src/win32helpers/delayHelper.h
+--- a/src/win32helpers/delayHelper.h	Tue Mar 29 10:13:05 2016 +0200
++++ b/src/win32helpers/delayHelper.h	Mon May 11 19:24:08 2020 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2016 T. Modes
++ * Copyright (C) 2016, 2017 T. Modes
+  *
+  * This file is part of Enblend.
+  *
 @@ -32,6 +32,9 @@
  #define VC_EXTRALEAN
  #include <windows.h>
@@ -10380,3 +11539,10 @@ diff -r ef8470f9d682 src/win32helpers/delayHelper.h
  #include <delayimp.h>
  static char* openclLib = "opencl.dll";
  
+@@ -81,4 +84,4 @@
+ 
+ PfnDliHook __pfnDliFailureHook2;
+ 
+-#endif // DELAYHELPER_H_INCLUDED
+\ No newline at end of file
++#endif // DELAYHELPER_H_INCLUDED
