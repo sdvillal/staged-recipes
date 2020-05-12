@@ -16,10 +16,9 @@ source:
     # hmaarrfk: Generated on 2020/05/11 from code snapshot of b23637
     #  diff -u enblend-enfuse-4.2 enblend-code-b236375ad1a80df4d0b4b15b3f8ff8e15cd31913 > ../git/feedstocks/staged-recipes/recipes/enblend/4.3-unreleased.patch
     - 4.3-unreleased.patch
-    - experimental_filesystem.patch
+    # - experimental_filesystem.patch
 
 build:
-  skip: true  # [not linux]
   number: 0
 
 requirements:
@@ -27,14 +26,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - make
+    - make   # [unix]
+    - ninja  # [win]
   host:
     - libpng
     - jpeg
     - libtiff
     - lcms2
     - openexr
-    - mercurial
     - gsl
     - boost
     - vigra
