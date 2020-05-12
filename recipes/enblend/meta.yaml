@@ -1,20 +1,18 @@
-# The version 4.2 while the last one released,
-# Really doesn't play well with new systems like conda
-{% set version = "4.3.0" %}
+# No new release in 4 years
+# Really old 4.2 version basically doesn't compile.
+# Hugin released their own 4.3 version
+{% set version = "4.3" %}
 
 package:
   name: enblend
   version: {{ version }}
 
 source:
-  # No new release in 4 years
-  # https://sourceforge.net/p/enblend/discussion/420370/thread/f6e8d6d9/
-  #hg_url: http://hg.code.sf.net/p/enblend/code
-  # url: https://phoenixnap.dl.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-4.2/enblend-enfuse-4.2.tar.gz
-  # url: https://sourceforge.net/code-snapshots/hg/e/en/enblend/code/enblend-code-b236375ad1a80df4d0b4b15b3f8ff8e15cd31913.zip
-  path: C:\Users\mark\Downloads\enblend-code-master
-  # fn: enblend-enfuse.zip
-  # sha256: 8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48
+  # hmaarrfk's private mirror, making it possible to download the source
+  # without mercurial
+  # I really tried hard to use patches.... i just dn't have the skills
+  url: https://github.com/ramonaoptics/enblend-code/archive/{{ version }}.tar.gz
+  sha256: b9510a419cb23f2964d6095bc295f9b19097362c05723425e78b0497741dcc17
 
 build:
   number: 0
