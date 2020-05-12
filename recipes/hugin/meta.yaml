@@ -41,8 +41,9 @@ requirements:
     - sqlite
     - lcms2
     - wxwidgets
+    - perl
   run:
-    - exiftools
+    - exiftool
     - enblend
 
 test:
