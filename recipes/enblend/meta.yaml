@@ -28,9 +28,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make
-    - mercurial
   host:
-    - mercurial
     - libpng
     - jpeg
     - libtiff
