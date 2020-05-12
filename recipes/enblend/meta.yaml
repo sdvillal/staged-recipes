@@ -35,7 +35,7 @@ requirements:
     - lcms2
     - openexr
     - gsl
-    - boost
+    - boost-cpp
     - vigra
     - libblas
   run:
