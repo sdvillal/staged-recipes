@@ -10,13 +10,11 @@ source:
   # No new release in 4 years
   # https://sourceforge.net/p/enblend/discussion/420370/thread/f6e8d6d9/
   #hg_url: http://hg.code.sf.net/p/enblend/code
-  url: https://phoenixnap.dl.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-4.2/enblend-enfuse-4.2.tar.gz
-  sha256: 8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48
-  patches:
-    # hmaarrfk: Generated on 2020/05/11 from code snapshot of b23637
-    #  diff -u enblend-enfuse-4.2 enblend-code-b236375ad1a80df4d0b4b15b3f8ff8e15cd31913 > ../git/feedstocks/staged-recipes/recipes/enblend/4.3-unreleased.patch
-    - 4.3-unreleased.patch
-    # - experimental_filesystem.patch
+  # url: https://phoenixnap.dl.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-4.2/enblend-enfuse-4.2.tar.gz
+  # url: https://sourceforge.net/code-snapshots/hg/e/en/enblend/code/enblend-code-b236375ad1a80df4d0b4b15b3f8ff8e15cd31913.zip
+  path: C:\Users\mark\Downloads\enblend-code-master
+  # fn: enblend-enfuse.zip
+  # sha256: 8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48
 
 build:
   number: 0
@@ -38,6 +36,7 @@ requirements:
     - boost-cpp
     - vigra
     - libblas
+    - perl
   run:
     - vigra
     - gsl
